@@ -1,0 +1,348 @@
+<!doctype html>
+{% load staticfiles %}
+<html lang="en">
+
+<head>
+     <!-- table.table-bordered{
+    border:3px solid blue;
+    margin-top:20px;
+    }
+    table.table-bordered > thead > tr > th{
+    border:3px solid blue;
+    }
+    table.table-bordered > tbody > tr > td{
+    border:3px solid blue;
+    } -->
+    <style>
+    .font_size {
+      font-size: 19px;
+    }
+    .fontsize {
+      font-size: 21px;
+    }
+     table.table-bordered > tbody > tr > td{
+    border:3px solid black !important;
+    }
+    table.table-bordered > thead > tr > th{
+    border:3px solid black !important;
+    }
+        @media print {
+  #printPageButton {
+    display: none;
+
+  }
+}
+  </style>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <title>Visa Letter Tables</title>
+</head>
+
+<body>
+
+  <div class="djangtwo">
+    <!doctype html>
+    <html lang="en">
+
+    <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+      <title>Visa Letter Russian</title>
+    </head>
+
+    <body>
+                  <button id="printPageButton" class="btn btn-primary" onClick="window.print();" style="float: right; margin-right:90px; margin-top:30px; width:150px;">Print</button>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-2 mb-3">
+            <img src="{% static 'Logo--k7-01.jpg' %}" alt="" class="d-flex" style="width: 180px; height: 180px">
+          </div>
+          <div class="col-10 mt-5">
+            <h4 class="text-center col-10">ПОДТВЕРЖДЕНИЕ № {{ russian_visa.Visa_Letter_Number }}</h4>
+            <h4 class="text-center col-10">О ПРИЕМЕ ГРУППЫ ИНОСТРАННЫХ ТУРИСТОВ</h4>
+          </div>
+        </div>
+        <div class="row">
+          <ul class="list-group mb-1">
+            <li class="list-group-item border-0 fontsize"><b>Кратность визы :</b>{{ value|stringformat:"E" }}
+              {% if russian_visa.multiplicity == 'single' %}
+              однократная
+              {% elif russian_visa.multiplicity == 'double' %}
+              Двукратная
+              {% endif %}
+            </li>
+            <li class="list-group-item border-0 fontsize"><b>Гражданство :</b> {{ russian.Country }}
+            </li>
+            <li class="list-group-item border-0 fontsize"><b>Въезд с : </b>{{ russian_visa.entry_from }} г . <span
+                style="margin-left:20px"><b>Выезд до : </b>{{ russian_visa.departure_to }} г . </span></li>
+            <li class="list-group-item border-0 fontsize"><b>Количество :</b> {{ russian_visa.no_passengers }} человек
+            </li>
+            <li class="list-group-item border-0 fontsize"><b>Цель поездки :</b>
+              {% if russian_visa.Tourism == 'TOURISM' %}
+              туристическая
+              {% elif russian_visa.Tourism == 'AIM TOURISM' %}
+             <span class="text-uppercase"> Деловая </span>
+              {% endif %} </li>
+            <li class="list-group-item border-0 fontsize"><b>Маршрут и места пребывания :</b> РФ , {{ russian.Routes_and_Places }} </li>
+            <li class="list-group-item border-0 fontsize"><b>Гостиница :</b> {{ russian.hotels }}
+            </li>
+            <li class="list-group-item border-0 fontsize"><b>Приглашающая организация, ее адрес :</b> ООО «Волшебный Тур» <br>
+             123317 г. Москва, ул. Антонова-Овсеенко, дом 15, стр. 3, офис 6
+</li>
+            <li class="list-group-item border-0 fontsize"><b>Реестровый номер :</b> PTO 020689</li>
+            <p class="ml-4 fontsize"><b>Дополнительные сведения:</b></p>
+            </ul>
+            <p class=" fontsize" style="margin-left:250px"><b>СПИСОК ГРУППЫ ИНОСТРАННЫХ ТУРИСТОВ ИЗ Индии</b></p>
+        </div>
+        {% if russian_visa.firstname_5 %}
+        <table class="table text-center table-bordered">
+          <thead>
+            <tr>
+              <th>№П/П</th>
+              <th>ПОЛ</th>
+              <th>ФАМИЛИЯ</th>
+              <th>ИМЯ</th>
+              <th>№ ПАСПОРТА</th>
+              <th>ДАТА РОЖДЕНИЯ</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>1</td>
+            <td>{{russian_visa.Sex_1}}</td>
+            <td>{{russian_visa.lastname_1}}</td>
+            <td>{{russian_visa.firstname_1}}</td>
+            <td>{{russian_visa.Passport_Number_1}} </td>
+            <td>{{russian_visa.Date_Of_Birth_1}}</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>{{russian_visa.Sex_2}}</td>
+            <td>{{russian_visa.lastname_2}}</td>
+            <td>{{russian_visa.firstname_2}}</td>
+            <td>{{russian_visa.Passport_Number_2}} </td>
+            <td>{{russian_visa.Date_Of_Birth_2}}</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>{{russian_visa.Sex_3}}</td>
+            <td>{{russian_visa.lastname_3}}</td>
+            <td>{{russian_visa.firstname_3}}</td>
+            <td>{{russian_visa.Passport_Number_3}} </td>
+            <td>{{russian_visa.Date_Of_Birth_3}}</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>{{russian_visa.Sex_4}}</td>
+            <td>{{russian_visa.lastname_4}}</td>
+            <td>{{russian_visa.firstname_4}}</td>
+            <td>{{russian_visa.Passport_Number_4}} </td>
+            <td>{{russian_visa.Date_Of_Birth_4}}</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>{{russian_visa.Sex_5}}</td>
+            <td>{{russian_visa.lastname_5}}</td>
+            <td>{{russian_visa.firstname_5}}</td>
+            <td>{{russian_visa.Passport_Number_5}} </td>
+            <td>{{russian_visa.Date_Of_Birth_5}}</td>
+          </tr>
+        </table>
+        {% elif russian_visa.firstname_4 %}
+        <table class="table text-center table-bordered">
+          <thead>
+            <tr>
+              <th>№П/П</th>
+              <th>ПОЛ</th>
+              <th>ФАМИЛИЯ</th>
+              <th>ИМЯ</th>
+              <th>№ ПАСПОРТА</th>
+              <th>ДАТА РОЖДЕНИЯ</th>
+            </tr>
+          </thead>
+         <tr>
+            <td>1</td>
+            <td>{{russian_visa.Sex_1}}</td>
+            <td>{{russian_visa.lastname_1}}</td>
+            <td>{{russian_visa.firstname_1}}</td>
+            <td>{{russian_visa.Passport_Number_1}} </td>
+            <td>{{russian_visa.Date_Of_Birth_1}}</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>{{russian_visa.Sex_2}}</td>
+            <td>{{russian_visa.lastname_2}}</td>
+            <td>{{russian_visa.firstname_2}}</td>
+            <td>{{russian_visa.Passport_Number_2}} </td>
+            <td>{{russian_visa.Date_Of_Birth_2}}</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>{{russian_visa.Sex_3}}</td>
+            <td>{{russian_visa.lastname_3}}</td>
+            <td>{{russian_visa.firstname_3}}</td>
+            <td>{{russian_visa.Passport_Number_3}}</td>
+            <td>{{russian_visa.Date_Of_Birth_3}}</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>{{russian_visa.Sex_4}}</td>
+            <td>{{russian_visa.lastname_4}}</td>
+            <td>{{russian_visa.firstname_4}}</td>
+            <td>{{russian_visa.Passport_Number_4}}</td>
+            <td>{{russian_visa.Date_Of_Birth_4}}</td>
+          </tr>
+        </table>
+        {% elif russian_visa.firstname_3 %}
+        <table class="table text-center table-bordered">
+          <thead>
+            <tr>
+              <th>№П/П</th>
+              <th>ПОЛ</th>
+              <th>ФАМИЛИЯ</th>
+              <th>ИМЯ</th>
+              <th>№ ПАСПОРТА</th>
+              <th>ДАТА РОЖДЕНИЯ</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>1</td>
+            <td>{{russian_visa.Sex_1}}</td>
+            <td>{{russian_visa.lastname_1}}</td>
+            <td>{{russian_visa.firstname_1}}</td>
+            <td>{{russian_visa.Passport_Number_1}} </td>
+            <td>{{russian_visa.Date_Of_Birth_1}}</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>{{russian_visa.Sex_2}}</td>
+            <td>{{russian_visa.lastname_2}}</td>
+            <td>{{russian_visa.firstname_2}}</td>
+            <td>{{russian_visa.Passport_Number_2}} </td>
+            <td>{{russian_visa.Date_Of_Birth_2}}</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>{{russian_visa.Sex_3}}</td>
+            <td>{{russian_visa.lastname_3}}</td>
+            <td>{{russian_visa.firstname_3}}</td>
+            <td>{{russian_visa.Passport_Number_3}}</td>
+            <td>{{russian_visa.Date_Of_Birth_3}}</td>
+          </tr>
+        </table>
+        {% elif russian_visa.firstname_2 %}
+        <table class="table text-center table-bordered">
+          <thead>
+            <tr>
+              <th>№П/П</th>
+              <th>ПОЛ</th>
+              <th>ФАМИЛИЯ</th>
+              <th>ИМЯ</th>
+              <th>№ ПАСПОРТА</th>
+              <th>ДАТА РОЖДЕНИЯ</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>1</td>
+            <td>{{russian_visa.Sex_1}}</td>
+            <td>{{russian_visa.lastname_1}}</td>
+            <td>{{russian_visa.firstname_1}}</td>
+            <td>{{russian_visa.Passport_Number_1}}</td>
+            <td>{{russian_visa.Date_Of_Birth_1}}</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>{{russian_visa.Sex_2}}</td>
+            <td>{{russian_visa.lastname_2}}</td>
+            <td>{{russian_visa.firstname_2}}</td>
+            <td>{{russian_visa.Passport_Number_2}}</td>
+            <td>{{russian_visa.Date_Of_Birth_2}}</td>
+          </tr>
+        </table>
+        {% elif russian_visa.firstname_1 %}
+        <table class="table text-center table-bordered">
+          <thead>
+            <tr>
+              <th>№П/П</th>
+              <th>ПОЛ</th>
+              <th>ФАМИЛИЯ</th>
+              <th>ИМЯ</th>
+              <th>№ ПАСПОРТА</th>
+              <th>ДАТА РОЖДЕНИЯ</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>1</td>
+            <td>{{russian_visa.Sex_1}}</td>
+            <td>{{russian_visa.lastname_1}}</td>
+            <td>{{russian_visa.firstname_1}}</td>
+            <td>{{russian_visa.Passport_Number_1}}</td>
+            <td>{{russian_visa.Date_Of_Birth_1}}</td>
+          </tr>
+        </table>
+        {% endif %}
+        <div class="d-flex flex-row justify-content-between mt-5 fontsize">
+          <div>
+            <p><b>Дата: </b>{{russian_visa.Date_of_letter}} г . </p>
+            <p>Генеральный директор</p>
+            <p>ООО «Волшебный Тур»</p>
+          </div>
+          <!-- <div class="col-2"> -->
+          <!--   <img src="{% static 'final.jpg' %}" alt="" class="d-flex" style = 'width: 200px; height: 200px; margin-right: 70px '> -->
+          <div>
+            <p style="margin-top:80px" class="text-uppercase">Волженина Ю.В.</p>
+          </div>
+          <!--  </div> -->
+        </div>
+        <div class="row">
+          <div class="col-8 text-center text-muted mx-auto" style="margin-top: 100px">
+            <p class="font_size">Общество с ограниченной ответственностью «Волшебный Тур»
+              г. Москва, ул. Антонова-Овсеенко, д15, с3, офис 6, ОГРН 1187746869452 ИНН 7703466077 КПП 770301001
+              +7 499 256 80 81 www.volshebnytours.com info@volshebnytours.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    </body>
+
+    </html>
+
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<html lang="en">
+{% load staticfiles %}
+<title>Volshebny Holidays</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-teal w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Volshebny Holidays Visa Letter Generator</a>
+    <a href="http://www.volshebnyholidays.com/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Our Website</a>
+    <a href="{% url 'admin:index' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Generate Letter</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="http://www.volshebnyholidays.com/" class="w3-bar-item w3-button w3-padding-large">Our Website</a>
+    <a href="{% url 'admin:index' %}" class="w3-bar-item w3-button w3-padding-large">Generate Letter</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-teal w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">GENERATE VISA LETTER WITH EASE</h1>
+  <p class="w3-xlarge">Developed by Finity TechServ</p>
+  <a href = "{% url 'admin:index' %}" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-text-black">Login</a>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>Volshebny Holidays</h1>
+      <h5 class="w3-padding-20 w3-text-teal">Dream. Explore. Discover.</h5>
+
+      <p class="w3-text-black">Volshebny Holidays, has been a key player in the region, offering unmatched services. Regarded as one of the leading DMCs for Russia & CIS Countries in India; we have been registered since 2016. Upholding the highest standards of services and product excellence, our growth has been led by the dedicated efforts of all our staff members, and our commitment to adhering to the highest professional standards and ethics.</p>
+    </div>
+
+    <div class="w3-third w3-center">
+      <img src="http://www.volshebnyholidays.com/images/logo.png" class="w3-padding-64 w3-text-red">
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <img src="https://media.licdn.com/dms/image/C510BAQGwRZ44ABX26Q/company-logo_400_400/0?e=1565222400&v=beta&t=9EeCYHOWeWTEpntZgIr4Xim8u17vp2hMemDT5kTnPbY" class="w3-padding-64 " width= 50% height= 40% >
+    </div>
+
+    <div class="w3-twothird">
+      <h1>Finity TechServ</h1>
+      <h5 class="w3-padding-20 w3-text-teal">Technologies Beyond Infinity</h5>
+
+      <p class="w3-text-black">Finity TechServ provides high-quality software products to invest into for your business or
+organization. Leading most of the software companies, Finity proves an upper hand in
+Customized Web, E-Commerce development website Mobile App, and Inventory Software
+development. We are well-known for presenting timely and efficient services, along with
+maintaining long-term resourceful relationships with our clients and partners to build smart
+solutions that drive results..</p>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">“To Travel is to Live”</h1>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">
+ <p>Designed and Developed by <a href="https://www.finitytechserv.com" target="_blank"> Finity TechServ</a></p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>

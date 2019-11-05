@@ -1,0 +1,413 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <style>
+    .first{
+        border: 0.5px solid black
+    }
+    .second{
+        height: 300px;
+        width: 1400px;
+        border: 0.5px solid black
+    }
+    .third{
+        height: 60px;
+        border: 0.5px solid black;
+        width: 1400px;
+    }
+    .second1{
+        height: 300px;
+        width: 400px;
+        border: 0.5px solid black
+    }
+    .second2{
+        width: 400px;
+        height: 100px;
+        border: 0.5px solid black
+    }
+    .s3{
+        width: 200px;
+        height: 100px;
+        border: 0.5px solid black
+    }
+    .parent{
+        display: flex;
+        height: 700px;
+        border: 0.5px solid black;
+        width: 1400px;
+        flex-direction: column;
+    }
+    .child1{
+  width: 1400px; 
+  height: 300px;
+  margin:0; 
+  border: 0.5px solid black;
+  display: flex;
+  flex-direction: row;
+}
+.child2{
+  width: 1400px; 
+  height: 100px;
+  margin:0; 
+  border: 0.5px solid green;
+  display: flex;
+  flex-direction: row;
+}
+.child3{
+  width: 1400px; 
+  height: 300px;
+  margin:0; 
+  border: 0.5px solid rebeccapurple;
+  display: flex;
+  flex-direction: row;
+}
+.child1_1{
+    width: 400px;
+    height: 300px;
+    border: 0.5px solid black;
+    display: flex;
+    flex-direction: column;
+    
+}
+.child1_2{
+    width: 400px;
+    height: 100px;
+    border: 0.5px solid black;
+    display: flex;
+    flex-direction: row;
+}
+.child1_4{
+    width: 600PX;
+    height: 300px;
+    border: 0.5px solid black ;
+}
+.child1_5{
+    height: 200px;
+    width: 400px;
+    border: 0.5px solid black;
+}
+.smallbox{
+    height: 100px;
+    width: 200px;
+    border: 0.5px solid black;
+}
+.longbox{
+    height: 100px;
+    width: 600px;
+    border: 0.5px solid black;
+}
+.mediumbox{
+    height: 200px;
+    width: 600px;
+    border: 0.5px solid black;
+}
+.smediumbox{
+    height: 100px;
+    width: 600px;
+    border: 0.5px solid black;
+    display: flex;
+    flex-direction: row;
+}
+.smallbox2{
+    height: 100px;
+    width: 300px;
+    border: 0.5px solid black;
+}
+.child2_1{
+    height: 100px;
+    width: 400px;
+    border: 0.5px solid black;
+}
+.child2_2{
+    height: 100px;
+    width: 600px;
+    border: 0.5px solid black ;
+    display: flex;
+    flex-direction: row;
+}
+.child2_3{
+    height: 100px;
+    width: 300px;
+    border: 0.5px solid black;
+}
+.child3_1{
+    height: 300px;
+    width: 1000px;
+    border: 0.5px solid black;
+    display: flex;
+    flex-direction: column;
+}
+.child3_2{
+    height: 150px;
+    width: 1000px;
+    border: 0.5px solid black;
+    display: flex;
+    flex-direction: row;
+}
+.child3_3{
+    height: 150px;
+    width: 1000px;
+    border: 0.5px solid black;
+}
+.child3_4{
+    height: 150px;
+    width: 400px;
+    border: 0.5px solid black;
+    display: flex;
+    flex-direction: column;
+}
+.child3_5{
+    height: 150px;
+    width: 600px;
+    border: 0.5px solid black;
+    display: flex;
+    flex-direction: column;
+}
+.child3_6{
+    height: 50px;
+    width: 400px;
+    border: 0.5px solid black;
+
+}
+.child3_7{
+    height: 100px;
+    width: 400px;
+    border: 0.5px solid black;
+    display: flex;
+    flex-direction: row;
+}
+.child3_8{
+    height: 100px;
+    width: 200px;
+    border: 0.5px solid black;
+}
+.child3_9{
+    height: 100px;
+    width: 200px;
+    border: 0.5px solid black;
+}
+.child3_10{
+    height: 50px;
+    width: 600px;
+    border: 0.5px solid black;
+    display: flex;
+    flex-direction: row;
+}
+.child3_12{
+    height: 50px;
+    width: 300px;
+    border: 0.5px solid black;
+   
+}
+.child3_13{
+    height: 50px;
+    width: 300px;
+    border: 0.5px solid black;
+ 
+}
+.child3_11{
+    height: 100px;
+    width: 600px;
+    border: 0.5px solid black;
+   
+}
+.extra{
+    
+    height: 100px;
+    width: 400px;
+    display: flex;
+    align-items: flex-end;                /* added */
+
+    
+}
+.extra1{
+ 
+    height: 100px;
+    width: 400px;
+    display: flex;
+    align-items: flex-end;
+}
+.extra2{
+    
+    height: 100px;
+    width: 400px;
+    display: flex;
+    align-items: flex-end;
+}
+.d{
+    border: 0.5px solid black
+}
+.extra3{
+    height: 30px;
+    width: 400px;
+    
+}
+.extra4{
+    height: 70px;
+    width: 400px;
+}
+.extramain{
+    width: 400px;
+    height: 100px;
+    border: 0.5px solid black;
+    display: flex;
+    flex-direction: column;
+}
+    </style>
+    <style type="text/css" media="print">
+      .page{ 
+        -webkit-transform: rotate(90deg); 
+     -moz-transform:rotate(90deg);
+     filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    }</style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Voucher</title>
+  </head>
+  <body>
+    <div class="djangtwo">
+      <!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Voucher</title>
+  </head>
+  <body>
+    <div class="page parent" style="margin-top:400px;" >
+      <div class="child1">
+          <div class="child1_1 text-center"><b>Magic Tours LLP</b><br><p>123317 Moscow, st. Antonov-Ovseenko, house 15, p. 3, office 6 tel .: (499) 256-80-81
+                </p></div>
+          <div class="child1_1">
+                <div class="child1_2 text-center"> 
+                    <div class="extramain">
+                    <div class="extra3"><b>VOUCHER</b></div>
+                    <div class="extra4">to confirmation of the reception of a group of foreign tourists № 622019
+                            </div>
+                            </div>
+                </div>
+                <div class="child1_5">
+                        <div class="child1_2">
+                            <div class="smallbox text-center">
+                                    arrival date
+                                    </div>
+                                    <div class="smallbox text-center">
+                                            date of departure
+                                            </div>
+                                    
+                        </div>
+                        <div class="child1_2">
+                            <div class="smallbox text-center">
+                                    22.03.2019г.
+                                    </div>
+                                    <div class="smallbox text-center">
+                                           
+                                            04.04.2019г.
+
+                                            </div>
+                        </div>
+                </div>
+          </div>
+          <div class="child1_4">
+              <div class="longbox text-center"><b>PLACES VISITED</b><br><p>РФ, г. Москва</p></div>
+              <div class="mediumbox">
+                  <div class="smediumbox">
+                    <div class="smallbox2 text-center">
+                         <b>   HOTELS<br>
+               			</b>
+                     </div>
+                     <div class="smallbox2 text-center">
+                            <b>  PLACE  <br>
+                                CATEGORY</b>
+                        </div>
+                  </div>
+                  <div class="smediumbox">
+                    <div class="smallbox2 text-center">
+                            «Космос»3*
+                            </div>
+                            <div class="smallbox2 text-center">
+                                    1 одноместный
+                                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="child2">
+            <div class="child2_1 text-center"><b>
+                    Regsiter No<br>
+                    РТО 020689
+                    </b></div>
+            <div class="child2_1 text-center"><b>
+                    Tourists List
+                    </b></div>
+            <div class="child2_2">
+                    <div class="child2_3 text-center"><b>
+                            Passport Nos
+                            </b></div>
+                    <div class="child2_3 text-center"><b>Citizenship</b></div>
+            </div>
+      </div>
+      <div class="child3">
+            <div class="child1_1">
+                <div class="extra "><b>Print:</b></div>
+                <div class="extra1 "><b>Signature:</b></div>
+                <div class="extra2 "> Put Date Here</div>
+            </div>
+            <div class="child3_1">
+                    <div class="child3_2">
+                            <div class="child3_4">
+                                    <div class="child3_6 text-center">
+                                            <b>Attached ( 1 Person ) </b>
+                                            </div>
+                                    <div class="child3_7">
+                                            <div class="child3_8 text-center">
+                                                    Экскурсии
+                                                    </div>
+                                            <div class="child3_9 text-center"><b>NUTRITION</b> <br> ВВ
+                                            </div>
+                                    </div>
+                            </div>
+                            <div class="child3_5">
+                                    <div class="child3_10">
+                                            <div class="child3_12 text-center">
+                                                    прилагается
+                                                    </div>
+                                            <div class="child3_13 text-center">Индия</div>
+                                    </div>
+                                    <div class="child3_11 text-center"><b>Aditional Services</b> нет</div>
+                            </div>
+                    </div>
+                    <div class="child3_3 text-center"><b>Aditional Information</b><br>All services are paid in full
+                    </div>
+            </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

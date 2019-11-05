@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <style>
+    a:hover{
+      background-color: white;
+      color: black;
+    }
+    </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css"
+      href="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.18/af-2.3.2/cr-1.5.0/fc-3.2.5/fh-3.1.4/kt-2.5.0/r-2.2.2/rg-1.1.0/rr-1.2.4/sc-1.5.0/sl-1.2.6/datatables.min.css" />
+    <script type="text/javascript"
+      src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.18/af-2.3.2/cr-1.5.0/fc-3.2.5/fh-3.1.4/kt-2.5.0/r-2.2.2/rg-1.1.0/rr-1.2.4/sc-1.5.0/sl-1.2.6/datatables.min.js"></script>
+
+    <title>Visa Letter Tables</title>
+  </head>
+  <body>
+
+    <div class="djangtwo">
+      <div class="row" style="background-color:#417690">
+        <div class="mt-2 col-6">
+        <h1 class="text-center" style="font-size:40px; color: #F5DD5D; font-family: sans-serif; font: weight 100;" >Generate Visa Documents</h1>
+        </div>
+        <div class="mt-3" style="margin-right: 20px;" >
+        <a href="{% url 'admin:index' %}" class = ' btn' id="hove" style=" margin-bottom:10px; font-size: 20px;margin-left:79px; color: #F5DD5D; font-family: sans-serif; font: weight 100;">BACK TO ADMIN</a>
+          </div>
+      </div>
+
+      {% if list_view %}
+      <div id="content">
+        <div class="container-fluid" style="margin-top:30px">
+      <div class="table-responsive">
+          <table  id="myTable" class="display table-striped text-center" style="width:100%">
+          <thead class="thead-dark" style="font-size:20px;">
+              <th scope="col" >Visa Letter Number</th>
+              <th scope="col">Date Of Letter</th>
+              <th scope="col">Routes And Places</th>
+              <th scope="col">Number Of Pass</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Action</th>
+            </thead>
+                <!-- Dropdown -->
+            {% for acc in list_view %}
+              <tr style="font-size:16px">
+                <td>{{ acc.Visa_Letter_Number }}</td>
+                <td>{{ acc.Date_of_letter }}</td>
+                <td>{{ acc.Routes_and_Places }}</td>
+                <td>{{ acc.no_passengers }}</td>
+                <td>{{ acc.amount }}</td>
+                <td class="dropdown"><a href ='#' class = 'btn  dropdown-toggle' id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:16px;color:#F5DD5D;background-color: #417690">GENERATE</a>
+                <!-- Dropdown -->
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton ">
+                      <a class="dropdown-item" style="font-size:20px" href="{% url 'Volshebny_visa_letter:gen_eng_visa' %}">Generate English visa letter</a>
+                      <a class="dropdown-item"  style="font-size:20px" href="{% url 'Volshebny_visa_letter:visa' visa_letter_id=acc.pk %}">Generate Russian visa letter</a>
+                      <a class="dropdown-item"  style="font-size:20px" href="{% url 'Volshebny_visa_letter:visa_voucher_detail' visa_voucher_id=acc.pk %}">Generate English Voucher</a>
+                      <a class="dropdown-item"  style="font-size:20px" href="{% url 'Volshebny_visa_letter:visa_voucher_detail' visa_voucher_id=acc.pk %}">Generate Russian Voucher</a>
+                    </div>
+                  </td>
+                <!-- End of dropdown -->
+              </tr>
+            {% endfor %}
+        </table>
+       </div>
+          </div>
+        </div>
+      {% else %}
+        <p>No Access Records. Table Not Created.</p>
+      {% endif %}
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#myTable').DataTable({
+    "scrollX": true,
+    scrollY: '60vh',
+    });
+  });
+</script>
+
+  </body>
+</html>

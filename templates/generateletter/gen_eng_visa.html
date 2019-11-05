@@ -1,0 +1,282 @@
+<html lang="en">
+{% load staticfiles %}
+{% load gtranslate %}
+
+  <head>
+   <style>
+    .font_size {
+      font-size: 19px;
+    }
+    .fontsize {
+      font-size: 21px;
+    }
+     table.table-bordered > tbody > tr > td{
+    border:3px solid black !important;
+    }
+    table.table-bordered > thead > tr > th{
+    border:3px solid black !important;
+    }
+        @media print {
+  #printPageButton {
+    display: none;
+
+  }
+}
+
+  </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Visa Letter English</title>
+  </head>
+  <body>
+    <button id="printPageButton" class="btn btn-primary" onClick="window.print();" style="float: right; margin-right:90px; margin-top:30px; width:150px;">Print</button>
+    <div class="container">
+      <div class="row">
+      <div class="col-2">
+        <img src="{% static 'Logo--k7-01.jpg' %}" alt="VOLSHEBNY TOUR LLC" class="d-flex" style="width:200px; height:200px;">
+      </div>
+      <div class="col-10 mt-5 ">
+        <h4 class="text-center col-10">CONFORMATION NO:{{ detail_visa.Visa_Letter_Number }}</h4>
+        <h5 class="text-center col-10">ON THE RECEPTION OF A GROUP OF FOREIGN TOURISTS</h5>
+      </div>
+      </div>
+      <div class="row">
+      <ul class="list-group mb-1">
+        <li class="list-group-item border-0 fontsize"><b>Multiplicity Of Visa </b> : <span  class="text-uppercase" >{{ detail_visa.multiplicity }}</span></li>
+        <li class="list-group-item border-0 fontsize"><b>Citizenship  </b>: <span class="text-uppercase"> {{ detail_visa.Country.name }}</span></li>
+        <li class="list-group-item border-0 fontsize"><b>Entry From </b>: {{ detail_visa.entry_from }}<span style="margin-left:20px"><b>Departure : </b>  {{ detail_visa.departure_to }}</span></li>
+        <li class="list-group-item border-0 fontsize"><b>Number of Passengers</b> : {{ detail_visa.no_passenger }} PASSENGERS</li>
+        <li class="list-group-item border-0 fontsize"><b>Purpose Of Trip</b>: {{detail_visa.Tourism}}</li>
+        <li class="list-group-item border-0 fontsize"><b>Route and Place to Stay</b>: <span class="text-uppercase">{{ detail_visa.Routes_and_Places }}</span></li>
+        <li class="list-group-item border-0 fontsize"><b>Hotel</b>: <span class="text-uppercase">{{ detail_visa.hotels }}</span></li>
+        <li class="list-group-item border-0 fontsize"><b>Inviting Organisation, Its Address</b>: "VOLSHEBNY TOUR" LLC
+            Office No. 6, 8, 15С3,<br> ANTONOV-OVSEENKO, MOSCOW, RUSSIA</li>
+        <li class="list-group-item border-0 fontsize"><b>Register Number</b>: RTO 020689</li>
+        <p class="ml-4 fontsize"><b>Additional Information:</b></p>
+        </ul>
+        <p class=" fontsize" style="margin-left:330px;padding-bottom:1px; "><b>List Of Foreign Tourists From India</b></p>
+      </div>
+      {% if detail_visa.firstname_5 %}
+      <div>
+      <table class="table differenttable table-bordered text-center">
+        <thead>
+          
+        <tr>
+          <th  class="notbold">Sr.No</th>
+          <th  class="notbold">Sex</th>
+          <th  class="notbold">Last Name</th>
+          <th  class="notbold">First Name</th>
+          <th  class="notbold">Passport No</th>
+          <th  class="notbold">Date Of Birth</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>1</td>
+          <td  class="notbold">{{detail_visa.Sex_1}}</td>
+          <td  class="notbold">{{detail_visa.lastname_1}}</td>
+          <td  class="notbold">{{detail_visa.firstname_1}}</td>
+          <td  class="notbold">{{detail_visa.Passport_Number_1}}</td>
+          <td  class="notbold">{{detail_visa.Date_Of_Birth_1}}</td>
+        </tr>
+        <tr>
+            <td>2</td>
+          <td  class="notbold">{{detail_visa.Sex_2}}</td>
+          <td  class="notbold">{{detail_visa.lastname_2}}</td>
+          <td  class="notbold">{{detail_visa.firstname_2}}</td>
+          <td  class="notbold">{{detail_visa.Passport_Number_2}}</td>
+          <td  class="notbold">{{detail_visa.Date_Of_Birth_2}}</td>
+        </tr>
+        <tr>
+            <td>3</td>
+          <td  class="notbold">{{detail_visa.Sex_3}}</td>
+          <td  class="notbold">{{detail_visa.lastname_3}}</td>
+          <td  class="notbold">{{detail_visa.firstname_3}}</td>
+          <td  class="notbold">{{detail_visa.Passport_Number_3}}</td>
+          <td  class="notbold">{{detail_visa.Date_Of_Birth_3}}</td>
+        </tr>
+        <tr>
+            <td>4</td>
+          <td  class="notbold">{{detail_visa.Sex_4}}</td>
+          <td  class="notbold">{{detail_visa.lastname_4}}</td>
+          <td  class="notbold">{{detail_visa.firstname_4}}</td>
+          <td  class="notbold">{{detail_visa.Passport_Number_4}}</td>
+          <td  class="notbold">{{detail_visa.Date_Of_Birth_4}}</td>
+        </tr>
+        <tr>
+            <td>5</td>
+          <td  class="notbold">{{detail_visa.Sex_5}}</td>
+          <td  class="notbold">{{detail_visa.lastname_5}}</td>
+          <td  class="notbold">{{detail_visa.firstname_5}}</td>
+          <td  class="notbold">{{detail_visa.Passport_Number_5}}</td>
+          <td  class="notbold">{{detail_visa.Date_Of_Birth_5}}</td>
+        </tr>
+      </table>
+      {% elif detail_visa.firstname_4 %}
+      <div>
+      <table class="table differenttable table-bordered text-center">
+        <thead>
+        <tr>
+          <th  class="notbold">Sr.No</th>
+          <th  class="notbold">Sex</th>
+          <th  class="notbold">Last Name</th>
+          <th  class="notbold">First Name</th>
+          <th  class="notbold">Passport No</th>
+          <th  class="notbold">Date Of Birth</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>1</td>
+          <td  class="notbold">{{detail_visa.Sex_1}}</td>
+          <td  class="notbold">{{detail_visa.lastname_1}}</td>
+          <td  class="notbold">{{detail_visa.firstname_1}}</td>
+          <td  class="notbold">{{detail_visa.Passport_Number_1}}</td>
+          <td  class="notbold">{{detail_visa.Date_Of_Birth_1}}</td>
+        </tr>
+        <tr>
+            <td>2</td>
+          <td  class="notbold">{{detail_visa.Sex_2}}</td>
+          <td  class="notbold">{{detail_visa.lastname_2}}</td>
+          <td  class="notbold">{{detail_visa.firstname_2}}</td>
+          <td  class="notbold">{{detail_visa.Passport_Number_2}}</td>
+          <td  class="notbold">{{detail_visa.Date_Of_Birth_2}}</td>
+        </tr>
+        <tr>
+            <td>3</td>
+          <td  class="notbold">{{detail_visa.Sex_3}}</td>
+          <td  class="notbold">{{detail_visa.lastname_3}}</td>
+          <td  class="notbold">{{detail_visa.firstname_3}}</td>
+          <td  class="notbold">{{detail_visa.Passport_Number_3}}</td>
+          <td  class="notbold">{{detail_visa.Date_Of_Birth_3}}</td>
+        </tr>
+        <tr>
+            <td>4</td>
+          <td  class="notbold">{{detail_visa.Sex_4}}</td>
+          <td  class="notbold">{{detail_visa.lastname_4}}</td>
+          <td  class="notbold">{{detail_visa.firstname_4}}</td>
+          <td  class="notbold">{{detail_visa.Passport_Number_4}}</td>
+          <td  class="notbold">{{detail_visa.Date_Of_Birth_4}}</td>
+        </tr>
+      </table>
+      {% elif detail_visa.firstname_3 %}
+      <table  class="table table-bordered differenttable text-center">
+        <thead>
+        <tr>
+          <th  class="notbold">Sr.No</th>
+          <th>Sex</th>
+          <th>Last Name</th>
+          <th>First Name</th>
+          <th>Passport No</th>
+          <th>Date of Birth</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>1</td>
+          <td>{{detail_visa.Sex_1}}</td>
+          <td>{{detail_visa.lastname_1}}</td>
+          <td>{{detail_visa.firstname_1}}</td>
+          <td>{{detail_visa.Passport_Number_1}}</td>
+          <td>{{detail_visa.Date_Of_Birth_1}}</td>
+        </tr>
+        <tr>
+            <td>2</td>
+          <td>{{detail_visa.Sex_2}}</td>
+          <td>{{detail_visa.lastname_2}}</td>
+          <td>{{detail_visa.firstname_2}}</td>
+          <td>{{detail_visa.Passport_Number_2}}</td>
+          <td>{{detail_visa.Date_Of_Birth_2}}</td>
+        </tr>
+        <tr>
+            <td>3</td>
+          <td>{{detail_visa.Sex_3}}</td>
+          <td>{{detail_visa.lastname_3}}</td>
+          <td>{{detail_visa.firstname_3}}</td>
+          <td>{{detail_visa.Passport_Number_3}}</td>
+          <td>{{detail_visa.Date_Of_Birth_3}}</td>
+        </tr>
+      </table>
+      {% elif detail_visa.firstname_2 %}
+      <table  class="table differenttable table-bordered text-center">
+        <thead>
+        <tr>
+            <th  class="notbold">Sr.No</th>
+          <th>Sex</th>
+          <th>Last Name</th>
+          <th>First Name</th>
+          <th>Passport No</th>
+          <th>Date of Birth</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>1</td>
+          <td>{{detail_visa.Sex_1}}</td>
+          <td>{{detail_visa.lastname_1}}</td>
+          <td>{{detail_visa.firstname_1}}</td>
+          <td>{{detail_visa.Passport_Number_1}}</td>
+          <td>{{detail_visa.Date_Of_Birth_1}}</td>
+        </tr>
+        <tr>
+            <td>2</td>
+          <td>{{detail_visa.Sex_2}}</td>
+          <td>{{detail_visa.lastname_2}}</td>
+          <td>{{detail_visa.firstname_2}}</td>
+          <td>{{detail_visa.Passport_Number_2}}</td>
+          <td>{{detail_visa.Date_Of_Birth_2}}</td>
+        </tr>
+      </table>
+      {% elif detail_visa.firstname_1 %}
+      <table class="table differenttable table-bordered text-center">
+        <thead>
+        <tr>
+            <th  class="notbold">Sr.No</th>
+          <th>Sex</th>
+          <th>Last Name</th>
+          <th>First Name</th>
+          <th>Passport No</th>
+          <th>Date of Birth</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>1</td>
+          <td>{{detail_visa.Sex_1}}</td>
+          <td>{{detail_visa.lastname_1}}</td>
+          <td>{{detail_visa.firstname_1}}</td>
+          <td>{{detail_visa.Passport_Number_1}}</td>
+          <td>{{detail_visa.Date_Of_Birth_1}}</td>
+        </tr>
+      </table>
+      {% endif %}
+      <div class="d-flex flex-row justify-content-between mt-5 fontsize">
+        <div >
+          <p><b>Date:</b> {{detail_visa.Date_of_letter}}</p>
+          <P>CEO</P>
+          <P>LLC "VOLSHEBNY TOUR"</P>
+        </div>
+       <!--- <div class="col-2">-->
+          <!--<img src="{% static 'final.jpg' %}" alt="VOLSHEBNY TOUR" class="d-flex" style="width:200px; margin-right:70px; height:200px;">-->
+          <p style="margin-top:80px" class="text-uppercase">Волженина Ю.В.</p>
+        </div>
+      <div class="row">
+        <div class="col-8 text-center text-muted mx-auto">
+          <p class="font_size" style="margin-top:90px;">
+            LLC "VOLSHEBNY TOUR"<br>
+               Office No. 6, 8, 15С3, ANTONOV-OVSEENKO, MOSCOW, RUSSIA
+          OGRN 1187746869452 INN 7703466077 KPP 770301001<br>
+            +7 499 256 80 81 www.volshebnytours.com info@volshebny.com</p>
+        </div>
+      </div>
+    </div>
+</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+

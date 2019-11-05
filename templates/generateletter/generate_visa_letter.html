@@ -1,0 +1,309 @@
+{% extends 'generateletter/base.html' %}
+
+{% load static %}
+
+{% block stylesheet %}
+{% endblock stylesheet %}
+
+{% block headscript %}
+{% endblock headscript %}
+
+{% block content %}
+ <div style="margin-left: 5px;margin-right: 5px;margin-top: 5px">
+        <h3>Please Fill Below Form To Generate Visa Letter <span style="float: right;font-size: 18px">For Help <a href="#">Click Here</a></span></h3>
+        <hr>
+        <form action={% url 'Volshebny_visa_letter:visa_letter_form_submit' %} method="post" onSubmit="alert('Thank you for registering. Our Team Will get back to you as soon as possible.');">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="orgDetails">Organization Details</label>
+                    <select id="OrganizationName" name="OrganizationName" class="form-control">
+                        <option> Select Organization Details</option>
+                        {% for OName_one in OName %}
+                        <option value={{OName_one.pk}}>{{ OName_one.Name_of_Organization }}</option>
+                    
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="multiplicity">Multiplicity</label>
+                    <select id="multiplicity" name="multiplicity" class="form-control">
+                        <option>Single</option>
+                        <option>Double</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="passenger">No. of Passengers</label>
+                    <input type="number" min="1" max="5" class="form-control" id="no_of_passenger" name="no_of_passenger" onchange="showDiv()">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="country">Country</label>
+                    <select id="Country" name="Country" class="form-control">
+                        <option>India</option>
+                        <option>USA</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="from">Entry From</label>
+                    <input type="date" class="form-control" id="entry_from" name="entry_from">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="dparture">Departure to</label>
+                    <input type="date" class="form-control" id="departure_to" name="departure_to">
+
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="tourism">Tourism</label>
+                    <select id="Tourism" name="Tourism" class="form-control">
+                        <option>TOURISM</option>
+                        <option>AIM TOURISM</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="passenger">Visa Letter Number</label>
+                    <input type="number" min="1" class="form-control" id="Visa_Letter_Number" name="Visa_Letter_Number">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="letter_date">Date of Letter</label>
+                    <input type="date" class="form-control" id="Date_of_letter" name="Date_of_letter">
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="route_place">Routes and Places</label>
+                    <input type="text" class="form-control" id="Routes_and_Places" name="Routes_and_Places">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="hotels">Hotels</label>
+                    <input type="text" class="form-control" id="hotels" name="hotels">
+
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="payment_status">Payment Status</label>
+                    <select id="Payment_status" name="Payment_status" class="form-control">
+                        <option>Unpaid</option>
+                        <option>Paid</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="amount">Amount</label>
+                    <input type="number" min="1" class="form-control" id="amount" name="amount">
+                </div>
+            </div>
+
+            <div id="passenger1" style="display: none">
+                <hr>
+                <h4>Passenger 1 Details:</h4>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="fname1">First name of Passenger 1</label>
+                        <input type="text" class="form-control" id="firstname_1" name="firstname_1">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="lname1">Last name of Passenger 1</label>
+                        <input type="text" class="form-control" id="lastname_1" name="lastname_1">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="passport1">Passport Number of Passenger 1</label>
+                        <input type="number" min="1" class="form-control" id="Passport_Number_1" name="Passport_Number_1">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="dob1">Date of Birth of Passenger 1</label>
+                        <input type="date" class="form-control" id="Date_Of_Birth_1" name="Date_Of_Birth_1">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="sex1">Sex of Passenger 1</label>
+                        <select id="Sex_1" name="Sex_1" class="form-control">
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="passenger2" style="display: none">
+                <hr>
+                <h4>Passenger 2 Details:</h4>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="fname2">First name of Passenger 2</label>
+                        <input type="text" class="form-control" id="firstname_2" name="firstname_2">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="lname2">Last name of Passenger 2</label>
+                        <input type="text" class="form-control" id="lastname_2" name="lastname_2">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="passport2">Passport Number of Passenger 2</label>
+                        <input type="number" min="1" class="form-control" id="Passport_Number_2" name="Passport_Number_2">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="dob2">Date of Birth of Passenger 2</label>
+                        <input type="date" class="form-control" id="Date_Of_Birth_2" name="Date_Of_Birth_2">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="sex2">Sex of Passenger 2</label>
+                        <select id="Sex_2" name="Sex_2" class="form-control">
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="passenger3" style="display: none">
+                 <hr>
+                <h4>Passenger 3 Details:</h4>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="fname3">First name of Passenger 3</label>
+                        <input type="text" class="form-control" id="firstname_3" name="firstname_3">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="lname3">Last name of Passenger 3</label>
+                        <input type="text" class="form-control" id="lastname_3" name="lastname_3">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="passport3">Passport Number of Passenger 3</label>
+                        <input type="number" min="1" class="form-control" id="Passport_Number_3" name="Passport_Number_3">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="dob3">Date of Birth of Passenger 3</label>
+                        <input type="date" class="form-control" id="Date_Of_Birth_3" name="Date_Of_Birth_3">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="sex3">Sex of Passenger 3</label>
+                        <select id="Sex_3" name="Sex_3" class="form-control">
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="passenger4" style="display: none">
+                <hr>
+                <h4>Passenger 4 Details:</h4>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="fname4">First name of Passenger 4</label>
+                        <input type="text" class="form-control" id="" name="">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="lname4">Last name of Passenger 4</label>
+                        <input type="text" class="form-control" id="" name="">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="passport4">Passport Number of Passenger 4</label>
+                        <input type="number" min="1" class="form-control" id="" name="">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="dob4">Date of Birth of Passenger 4</label>
+                        <input type="date" class="form-control" id="" name="">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="sex4">Sex of Passenger 4</label>
+                        <select id="" name="" class="form-control">
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="passenger5" style="display: none">
+                 <hr>
+                <h4>Passenger 5 Details:</h4>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="fname5">First name of Passenger 5</label>
+                        <input type="text" class="form-control" id="" name="">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="lname5">Last name of Passenger 5</label>
+                        <input type="text" class="form-control" id="" name="">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="passport5">Passport Number of Passenger 5</label>
+                        <input type="number" min="1" class="form-control" id="" name="">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="dob5">Date of Birth of Passenger 5</label>
+                        <input type="date" class="form-control" id="" name="">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="sex5">Sex of Passenger 5</label>
+                        <select id="" name="" class="form-control">
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-success btn-block">Save</button>
+        </form>
+    </div>
+    {% endblock %}
+    
+    {% block script %}
+     <script>
+    function showDiv(){
+       var No_Passenger = document.getElementById("no_of_passenger").value;
+        if(No_Passenger== "1"){
+            document.getElementById("passenger1").style.display="block";
+            document.getElementById("passenger2").style.display="none";
+            document.getElementById("passenger3").style.display="none";
+            document.getElementById("passenger4").style.display="none";
+            document.getElementById("passenger5").style.display="none";
+        }
+        if(No_Passenger== "2"){
+            document.getElementById("passenger1").style.display="block";
+            document.getElementById("passenger2").style.display="block";
+            document.getElementById("passenger3").style.display="none";
+            document.getElementById("passenger4").style.display="none";
+            document.getElementById("passenger5").style.display="none";
+        }
+        if(No_Passenger== "3"){
+            document.getElementById("passenger1").style.display="block";
+            document.getElementById("passenger2").style.display="block";
+            document.getElementById("passenger3").style.display="block";
+            document.getElementById("passenger4").style.display="none";
+            document.getElementById("passenger5").style.display="none";
+        }
+        if(No_Passenger== "4"){
+            document.getElementById("passenger1").style.display="block";
+            document.getElementById("passenger2").style.display="block";
+            document.getElementById("passenger3").style.display="block";
+            document.getElementById("passenger4").style.display="block";
+            document.getElementById("passenger5").style.display="none";
+        }
+        if(No_Passenger== "5"){
+            document.getElementById("passenger1").style.display="block";
+            document.getElementById("passenger2").style.display="block";
+            document.getElementById("passenger3").style.display="block";
+            document.getElementById("passenger4").style.display="block";
+            document.getElementById("passenger5").style.display="block";
+        }
+        
+    }
+    
+    </script>
+{% endblock script %}

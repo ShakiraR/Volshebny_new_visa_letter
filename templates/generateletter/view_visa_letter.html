@@ -1,0 +1,68 @@
+{% extends 'generateletter/base.html' %}
+
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+{% endblock stylesheet %}
+
+{% block headscript %}
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+{% endblock headscript %}
+
+{% block content %}
+<div style="margin-left: 5px;margin-right: 5px">
+    <h3>All Visa Letters</h3>
+    <hr>
+    <table id="myTable" class="display">
+        <thead>
+            <tr>
+                <th>Sr No.</th>
+                <th>Visa letter Number</th>
+                <th>Date Of Letter</th>
+                <th>Entry From</th>
+                <th>Departure To</th>
+                <th>Routes & Places</th>
+                <th>Number of Passengers</th>
+                <th>Organization Details</th>
+                <th>Amount</th>
+                <th>Payment Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        {% for acc in list_view %}
+        <tr style="font-size:16px">
+          <td>{{ acc.pk }}</td>
+          <td>{{ acc.Visa_Letter_Number }}</td>
+          <td>{{ acc.Date_of_letter }}</td>
+          <td>{{ acc.entry_from }}</td>
+          <td>{{ acc.departure_to }}</td>
+          <td>{{ acc.Routes_and_Places }}</td>
+          <td>{{ acc.no_passengers }}</td>
+          <td>{{ acc.Organization_Details }}</td>
+          <td>{{ acc.amount }}</td>
+          <td>{{ acc.Payment_status }}</td>
+          <td class="dropdown"><a href ='#' class = 'btn  dropdown-toggle' id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:16px;color:#F5DD5D;background-color: #417690">GENERATE</a>
+          <!-- Dropdown -->
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton ">
+                <a class="dropdown-item" style="font-size:20px" href="{% url 'Volshebny_visa_letter:gen_eng_visa' pk=acc.pk %}">Generate English visa letter</a>
+                <a class="dropdown-item"  style="font-size:20px" href="{% url 'Volshebny_visa_letter:gen_rus_visa'  pk=acc.pk %}">Generate Russian visa letter</a>
+                <a class="dropdown-item"  style="font-size:20px" href="{% url 'Volshebny_visa_letter:visa_voucher_detail' visa_voucher_id=acc.pk %}">Generate Russian Voucher</a>
+            </div>
+          </td>
+          <!-- End of dropdown -->
+        </tr>
+      {% endfor %}
+    </table>
+
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script>
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+    });
+</script>
+{% endblock script %}

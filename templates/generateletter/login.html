@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{% static 'generateletter/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'generateletter/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'generateletter/css/iofrm-style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'generateletter/css/iofrm-theme5.css' %}">
+    {% endblock stylesheets %}
+    {% block headscript %}
+    <script src="{% static 'generateletter/js/jquery.min.js' %}"></script>
+    <script src="{% static 'generateletter/js/popper.min.js' %}"></script>
+    <script src="{% static 'generateletter/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'generateletter/js/main.js' %}"></script>
+    {% endblock headscript %}
+</head>
+
+<body style="background-color: #1B4965 !important;">
+    <div class="row">
+        <div class="form-holder" style="background-color: #1B4965 !important;">
+            <div class="form-content" style="background-color: #1B4965 !important;">
+                <div class="form-items">
+                    <h3>Login</h3>
+                    <p>Enter your username and password!</p>
+                    <div class="page-links">
+                        <a href="{% url 'Volshebny_visa_letter:Signup' %}" class="active">Login</a><a href="#">Register</a>
+                    </div>
+                    <form method="post" action="{% url 'Volshebny_visa_letter:Login' %}">
+                        {% csrf_token %}
+                        <input class="form-control" type="text" name="username" placeholder="Username" id="username" name="username" required>
+                        <input class="form-control" type="password" name="password" placeholder="Password" id="password" name="password" required>
+                        <div class="form-button">
+                            <button id="submit" type="submit" class="ibtn">Login</button> <a href="{% url 'Volshebny_visa_letter:Signup' %}">Forget password?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

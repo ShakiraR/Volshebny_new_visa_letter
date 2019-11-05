@@ -1,0 +1,49 @@
+{% extends 'generateletter/base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+{% endblock stylesheet %}
+
+{% block headscript %}
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+{% endblock headscript %}
+
+{% block content %}
+<hr>
+                 <h4>Name_of_Organization List<span style="float: right"></span></h4>
+                <hr>
+                <div>
+                     
+                         <table id="test_table" class="display" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Sr No.</th>
+                                    <th>Name_of_Organization</th>
+                                    
+                    
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    {% for OName_one in OName %}
+                                 <tr>
+                                   <td>{{OName_one.pk}}</td>
+                                   <td>{{ OName_one.Name_of_Organization }}</td>
+                                   
+                                    
+                                </tr>
+                                {% endfor %}
+                                
+                            </tbody>
+                    </table>
+               
+                </div>
+{% endblock %}
+
+{% block script %}
+<script>
+    $(document).ready(function() {
+        $('#test_table').DataTable();
+    });
+</script>
+{% endblock script %}
