@@ -51,7 +51,7 @@ class Visaletters(models.Model):
     Tourism= models.CharField(choices=TOUR, default="TOURISM",max_length= 100 )
     entry_from = models.CharField(max_length=200)
     departure_to = models.CharField(max_length=200)
-    Visa_Letter_Number = models.IntegerField(default=number)
+    Visa_Letter_Number = models.CharField(default=number,max_length=200)
     Visa_Letter_N = models.CharField(default = str(number),editable=False,max_length=200)
     Date_of_letter = models.CharField(max_length=200, blank=True)
     Routes_and_Places = models.CharField(max_length=500, default="moscow")

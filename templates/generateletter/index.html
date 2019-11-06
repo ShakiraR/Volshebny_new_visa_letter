@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Visa Letter Generator</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+
+    <link rel="shortcut icon" href="{% static 'generateletter/images/favicon.ico' %}">
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'generateletter/css/index/bootstrap.min.css' %}" type="text/css">
+
+    <!--Material Icon -->
+    <link rel="stylesheet" type="text/css" href="{% static 'generateletter/css/index/materialdesignicons.min.css' %}" />
+
+    <!-- Pe-icon-7 icon -->
+    <link rel="stylesheet" type="text/css" href="{% static 'generateletter/css/index/Pe-icon-7-stroke.css' %}">
+
+    <!-- Magnific pop-up -->
+    <link rel="stylesheet" type="text/css" href="{% static 'generateletter/css/index/magnific-popup.css' %}" />
+
+    <!--Slider-->
+    <link rel="stylesheet" href="{% static 'generateletter/css/index/owl.carousel.css' %}" />
+    <link rel="stylesheet" href="{% static 'generateletter/css/index/owl.theme.css' %}" />
+    <link rel="stylesheet" href="{% static 'generateletter/css/index/owl.transitions.css' %}" />
+
+    <!-- Custom  Css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'generateletter/css/index/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'generateletter/css/index/colors/green.css' %}" id="color-opt">
+
+
+</head>
+
+<body>
+
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="navbar-brand logo text-uppercase" href="{% url 'Volshebny_visa_letter:index' %}">
+                    MY VISA LETTER
+                </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="mdi mdi-menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
+                    <li class="nav-item active">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#features" class="nav-link">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link">services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#tutorial" class="nav-link">Tutorial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#client" class="nav-link">Client</a>
+                    </li>
+                    <li>
+                       <a href="#ModalCenter" data-toggle="modal" data-target="#ModalCenter"><button class="btn btn-success btn-sm"> Contact Now</button></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- START HOME -->
+    <section class="home-2" id="home">
+        <div class="bg-overlay"></div>
+        <div class="home-center">
+            <div class="home-desc-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="home-content text-center mt-5 pt-4">
+                                <p class="home-desc mx-auto f-16">Vestibulum ipsum primis faucibus molestie cursus convallis.</p>
+                                <h2 class="home-title-2 line-height_1_3">We are creating softwere to manage business easily</h2>
+                                <div class="mt-4">
+                                    <a href="" class="btn btn-custom">Get Started</a>
+                                </div>
+                                <div class="home-mockup-2">
+                                    <img src="{% static 'generateletter/images/home-mockup.png' %}" class="img-fluid" alt="">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END HOME -->
+    
+    <!-- START FEATURES -->
+    <section class="section bg-light" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-content text-center">
+                        <h3 class="title-heading">Core Featuress</h3>
+                        <p class="title-desc text-muted mt-3">Phasellus ultricies sapien quis neque tempor in molestie erat venenatis condimentum tincidunt iaculis volutpat gravida quam viverra lectus. </p>
+                        <div class="title-border mt-4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-3 vertical-content">
+                <div class="col-lg-7">
+                    <div class="features-img mt-4 text-center">
+                        <img src="{% static 'generateletter/images/features/img-1.svg' %}" class="img-fluid" alt="">
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="features-content mt-4">
+                        <p class="features-count-2 text-custom">01</p>
+                        <h5>Make Money Through Advertising</h5>
+                        <p class="text-muted mt-3">Kuspendisse pellentesque lacinia maximus odio dolorem ipsum quia dolor viverra ipsum sollicitudin lectus nibh urna aenean metus velit dignissim varius porta massa vivamus congue quis finibus malesuada pellentesque.</p>
+                        <div class="mt-4">
+                            <a href="" class="btn btn-sm btn-custom">Learn more</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-4 vertical-content">
+                <div class="col-lg-5">
+                    <div class="features-content mt-4">
+                        <p class="features-count-2 text-custom">02</p>
+                        <h5>Help your on live chat customers</h5>
+                        <p class="text-muted mt-3">Ruspendisse pellentesque lacinia maximus odio viverra ipsum sollicitudin lectus nibh welcomed and every pain urna aenean metus velit dignissim varius porta massa vivamus congue quis finibus malesuada pellentesque.</p>
+
+                        <div class="mt-4">
+                            <a href="" class="btn btn-sm btn-custom">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="features-img mt-4 text-center">
+                        <img src="{% static 'generateletter/images/features/img-2.svg' %}" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- END FEATURES -->
+    
+
+    <!-- START SERVICES -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="title-content text-center">
+                        <h3 class="title-heading">Our Services</h3>
+                        <p class="title-desc text-muted mt-3">Phasellus ultricies sapien quis neque tempor in molestie erat venenatis condimentum tincidunt iaculis volutpat gravida quam viverra lectus. </p>
+                        <div class="title-border mt-4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-3">
+                <div class="col-lg-4">
+                    <div class="services-box text-center mt-4">
+                        <div class="services-icon">
+                            <i><img src="{% static 'generateletter/images/services/writeletter.png' %}"></i>
+                        </div>
+                        <h5 class="mt-4">UI/UX Design</h5>
+                        <p class="text-muted mt-4 mb-0">Sollicitudin donec maximus mauris volupat phatra quisque congue portitor metus the vestibulum trisque ornare.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="services-box text-center mt-4">
+                        <div class="services-icon">
+                             <i><img src="{% static 'generateletter/images/services/writeletter.png' %}"></i>
+                        </div>
+                        <h5 class="mt-4">Branding Identity</h5>
+                        <p class="text-muted mt-4 mb-0">Mauris consectetur lectus sodales in auctor laoret eleifend lectus mauri the diam ligula on blandit fusce sagittis.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="services-box text-center mt-4">
+                        <div class="services-icon">
+                             <i><img src="{% static 'generateletter/images/services/writeletter.png' %}"></i>
+                        </div>
+                        <h5 class="mt-4">Creative Idea</h5>
+                        <p class="text-muted mt-4 mb-0">Quisque elementum the blandit the malesuada bibndum tincidunt interdum odio accumsan interdum facere.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-lg-4">
+                    <div class="services-box text-center mt-4">
+                        <div class="services-icon">
+                            <i><img src="{% static 'generateletter/images/services/writeletter.png' %}"></i>
+                        </div>
+                        <h5 class="mt-4">Easy to Use</h5>
+                        <p class="text-muted mt-4 mb-0">Vestibulum euismod pulvinar aliquam dapibus vulputate placerat tristique nulla fusce saen voluptas kulputate.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="services-box text-center mt-4">
+                        <div class="services-icon">
+                            <i><img src="{% static 'generateletter/images/services/writeletter.png' %}"></i>
+                        </div>
+                        <h5 class="mt-4">Dynamic Growth</h5>
+                        <p class="text-muted mt-4 mb-0">Aenean vehicula aliquam facilisis sapien finibus risus tempor aliquam dignissim pursues they desires herit imperdiet. </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="services-box text-center mt-4">
+                        <div class="services-icon">
+                            <i><img src="{% static 'generateletter/images/services/writeletter.png' %}"></i>
+                        </div>
+                        <h5 class="mt-4">Friendly Support</h5>
+                        <p class="text-muted mt-4 mb-0">Donec posuere mattis efficitur maecuenas porta lacinia imperdiet iaculis they pharetra dapibus suscipit maximus.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mt-4">
+                <div class="mx-auto mt-5">
+                    <a href="" class="btn btn-sm btn-custom">More services</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- END SERVICES -->
+
+    
+
+    <!-- START COUNTER -->
+    <section class="section-lg jarallax" data-jarallax='{"speed": 0.2}' style="background-image: url('images/bg-1.jpg');">
+        <div class="bg-overlay"></div>
+        <div class="container">
+
+            <div class="row vertical-content" id="counter">
+                <div class="col-lg-3">
+                    <div class="counter-box-2 mt-4 text-center text-white">
+                        <div class="counter-icon-2">
+                            <i class="mdi mdi-coffee-outline"></i>
+                        </div>
+                        <div class="counter-content-2 mt-4">
+                            <h1><span class="counter-value" data-count="1200">652</span></h1>
+                            <h5 class="mb-0 mt-4">Cups of coffee</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="counter-box-2 mt-4 text-center text-white">
+
+                        <div class="counter-icon-2">
+                            <i class="mdi mdi-emoticon-happy"></i>
+                        </div>
+
+                        <div class="counter-content-2 mt-4">
+                            <h1><span class="counter-value" data-count="4900">2356</span></h1>
+                            <h5 class="mb-0 mt-4">Happy Clients</h5>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="counter-box-2 mt-4 text-center text-white">
+
+                        <div class="counter-icon-2">
+                            <i class="mdi mdi-thumb-up-outline"></i>
+                        </div>
+
+                        <div class="counter-content-2 mt-4">
+                            <h1><span class="counter-value" data-count="5645">2358</span></h1>
+                            <h5 class="mb-0 mt-4">Project finish</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="counter-box-2 mt-4 text-center text-white">
+
+                        <div class="counter-icon-2 ">
+                            <i class="mdi mdi-trophy-outline"></i>
+                        </div>
+
+                        <div class="counter-content-2 mt-4">
+                            <h1><span class="counter-value" data-count="6000">3200</span></h1>
+                            <h5 class="mb-0 mt-4">Win Awards</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- END COUNTER -->
+    
+     <!-- START tutorial -->
+    <section class="section bg-light" id="tutorial">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-content text-center">
+                        <h3 class="title-heading">Tutorial</h3>
+                        <p class="title-desc text-muted mt-3">Phasellus ultricies sapien quis neque tempor in molestie erat venenatis condimentum tincidunt iaculis volutpat gravida quam viverra lectus. </p>
+                        <div class="title-border mt-4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 mt-3">
+                <div class="col-lg-4">
+                    <div class="blog-box-2 mt-4">
+                        <div class="blog-img-2">
+                            <img src="{% static 'generateletter/images/blog/img-1.jpg' %}" class="img-fluid" alt="">
+                        </div>
+
+                        <div class="bg-white p-3">
+                            <div class="blog-icon-2">
+                                <i class="pe-7s-camera"></i>
+                            </div>
+                            <p class="text-muted f-15">20/08/2018</p>
+                            <div class="blog-title">
+                                <a href="">Phasellus semper habitant fames.</a>
+                            </div>
+                            <div class="blog-border-2 mt-3"></div>
+                            <p class="text-muted f-15 mt-3">Quisque cursus her porttitor massa aliquam turpis ullmcorper faucibus the suspendisse gravida posuere turpis aliquam.</p>
+                            <div class="mt-3">
+                                <a href="" class="text-custom">Read more<i class="mdi mdi-chevron-double-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="blog-box-2 mt-4">
+                        <div class="blog-img-2">
+                            <img src="{% static 'generateletter/images/blog/img-2.jpg' %}" class="img-fluid" alt="">
+                        </div>
+
+                        <div class="bg-white p-3">
+                            <div class="blog-icon-2">
+                                <i class="pe-7s-camera"></i>
+                            </div>
+
+                            <p class="text-muted f-15">25/08/2018</p>
+                            <div class="blog-title">
+                                <a href="">Fabitant tristie senectus maleda.</a>
+                            </div>
+                            <div class="blog-border-2 mt-3"></div>
+                            <p class="text-muted f-15 mt-3">Muisque cursus her porttitor massa aliquam turpis ullmcorper faucibus the suspendisse gravida posuere turpis aliquam.</p>
+                            <div class="mt-3">
+                                <a href="" class="text-custom">Read more<i class="mdi mdi-chevron-double-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="blog-box-2 mt-4">
+                        <div class="blog-img-2">
+                            <img src="{% static 'generateletter/images/blog/img-3.jpg' %}" class="img-fluid" alt="">
+                        </div>
+
+                        <div class="bg-white p-3">
+                            <div class="blog-icon-2">
+                                <i class="pe-7s-camera"></i>
+                            </div>
+
+                            <p class="text-muted f-15">25/08/2018</p>
+
+                            <div class="blog-title">
+                                <a href="">Mauris pulvinar aliquam aliquet.</a>
+                            </div>
+                            <div class="blog-border-2 mt-3"></div>
+                            <p class="text-muted f-15 mt-3">Suisque cursus her porttitor massa aliquam turpis ullmcorper faucibus the suspendisse gravida posuere turpis aliquam.</p>
+                            <div class="mt-3">
+                                <a href="" class="text-custom">Read more<i class="mdi mdi-chevron-double-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="row mt-5 mt-3">
+                <div class="col-lg-4">
+                    <div class="blog-box-2 mt-4">
+                        <div class="blog-img-2">
+                            <img src="{% static 'generateletter/images/blog/img-1.jpg' %}" class="img-fluid" alt="">
+                        </div>
+
+                        <div class="bg-white p-3">
+                            <div class="blog-icon-2">
+                                <i class="pe-7s-camera"></i>
+                            </div>
+                            <p class="text-muted f-15">20/08/2018</p>
+                            <div class="blog-title">
+                                <a href="">Phasellus semper habitant fames.</a>
+                            </div>
+                            <div class="blog-border-2 mt-3"></div>
+                            <p class="text-muted f-15 mt-3">Quisque cursus her porttitor massa aliquam turpis ullmcorper faucibus the suspendisse gravida posuere turpis aliquam.</p>
+                            <div class="mt-3">
+                                <a href="" class="text-custom">Read more<i class="mdi mdi-chevron-double-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="blog-box-2 mt-4">
+                        <div class="blog-img-2">
+                            <img src="{% static 'generateletter/images/blog/img-2.jpg' %}" class="img-fluid" alt="">
+                        </div>
+
+                        <div class="bg-white p-3">
+                            <div class="blog-icon-2">
+                                <i class="pe-7s-camera"></i>
+                            </div>
+
+                            <p class="text-muted f-15">25/08/2018</p>
+                            <div class="blog-title">
+                                <a href="">Fabitant tristie senectus maleda.</a>
+                            </div>
+                            <div class="blog-border-2 mt-3"></div>
+                            <p class="text-muted f-15 mt-3">Muisque cursus her porttitor massa aliquam turpis ullmcorper faucibus the suspendisse gravida posuere turpis aliquam.</p>
+                            <div class="mt-3">
+                                <a href="" class="text-custom">Read more<i class="mdi mdi-chevron-double-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="blog-box-2 mt-4">
+                        <div class="blog-img-2">
+                            <img src="{% static 'generateletter/images/blog/img-3.jpg' %}" class="img-fluid" alt="">
+                        </div>
+
+                        <div class="bg-white p-3">
+                            <div class="blog-icon-2">
+                                <i class="pe-7s-camera"></i>
+                            </div>
+
+                            <p class="text-muted f-15">25/08/2018</p>
+
+                            <div class="blog-title">
+                                <a href="">Mauris pulvinar aliquam aliquet.</a>
+                            </div>
+                            <div class="blog-border-2 mt-3"></div>
+                            <p class="text-muted f-15 mt-3">Suisque cursus her porttitor massa aliquam turpis ullmcorper faucibus the suspendisse gravida posuere turpis aliquam.</p>
+                            <div class="mt-3">
+                                <a href="" class="text-custom">Read more<i class="mdi mdi-chevron-double-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            
+        </div>
+    </section>
+    <!-- END BLOG -->
+
+    <!-- START CTA -->
+    <section class="section-lg bg-cta" style="background-image: url('images/bg-2.jpg');" id="contact">
+        <div class="bg-overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="cta-box text-center">
+                        <h3 class="cta-title">30 day free trial, download the dashboard.</h3>
+                        <p class="cta-desc mt-4 f-16">Mauris metus ornare sollicitudin porta mollis commodo maecenas ullamcorper metus quis pharetra massa.</p>
+
+                        <div class="mt-5">
+                            <button type="button" class="btn btn-sm btn-custom" data-toggle="modal" data-target="#ModalCenter">
+                                Contact Us
+                            </button>
+                        </div>
+                        <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Contact Us</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="custom-form mt-4">
+                                            <div id="message"></div>
+                                            <form method="post" action="#" name="contact-form" id="contact-form">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <input name="name" id="name" type="text" class="form-control" placeholder="Your Name...">
+                                                        </div>
+                                                        <div class="form-group mb-4">
+                                                            <input name="email" id="email" type="email" class="form-control" placeholder="Your Email...">
+                                                        </div>
+                                                        <div class="form-group mb-4">
+                                                            <input name="subject" id="subject" type="text" class="form-control" placeholder="Your Subject...">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <textarea name="comments" id="comments" rows="4" class="form-control" placeholder="Your Message..."></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-3">
+                                                    <div class="col-sm-12 text-right">
+                                                        <input type="submit" id="submit" name="send" class="submitBnt btn btn-sm btn-custom" value="Send Message">
+                                                        <div id="simple-msg"></div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <!-- /form -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END CTA -->
+
+   <!-- START CLIENTS -->
+    <section class="section" id="client">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-content text-center">
+                        <h3 class="title-heading">Our clients said</h3>
+                        <p class="title-desc text-muted mt-3">Phasellus ultricies sapien quis neque tempor in molestie erat venenatis condimentum tincidunt iaculis volutpat gravida quam viverra lectus. </p>
+                        <div class="title-border mt-4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-3">
+                <div class="col-lg-12">
+                    <div class="owl-carousel" id="owl-demo-1">
+                        <div class="item mr-2 ml-2 mt-4">
+                            <div class="client-box-2 text-center">
+                                <div class="client-desc-2 bg-light p-4 rounded">
+                                    <p class="mb-5">Mauris interdum diame faucibusthey pulvinar erat curabitur quis porta erat etiam auctor blandit faucibus on phasellus the quam semptu semper dignissim.</p>
+                                </div>
+                                <div class="client-img-2">
+                                    <img src="{% static 'generateletter/images/user/img-1.jpg' %}" class="img-fluid rounded-circle" alt="">
+                                </div>
+                                <h5>Joey Mackey</h5>
+                                <p class="text-muted f-14">Designer</p>
+                            </div>
+                        </div>
+
+                        <div class="item mr-2 ml-2 mt-4">
+                            <div class="client-box-2 text-center">
+                                <div class="client-desc-2 bg-light p-4">
+                                    <p class="mb-5">Mauris interdum diame faucibusthey pulvinar erat curabitur quis porta erat etiam auctor blandit faucibus on phasellus the quam semptu semper dignissim.</p>
+                                </div>
+                                <div class="client-img-2">
+                                    <img src="{% static 'generateletter/images/user/img-2.jpg' %}" class="img-fluid rounded-circle" alt="">
+                                </div>
+                                <h5>Julie Jones</h5>
+                                <p class="text-muted f-14">Manager</p>
+                            </div>
+                        </div>
+
+                        <div class="item mr-2 ml-2 mt-4">
+                            <div class="client-box-2 text-center">
+                                <div class="client-desc-2 bg-light p-4">
+                                    <p class="mb-5">Mauris interdum diame faucibusthey pulvinar erat curabitur quis porta erat etiam auctor blandit faucibus on phasellus the quam semptu semper dignissim.</p>
+                                </div>
+                                <div class="client-img-2">
+                                    <img src="{% static 'generateletter/images/user/img-3.jpg' %}" class="img-fluid rounded-circle" alt="">
+                                </div>
+                                <h5>John Doe</h5>
+                                <p class="text-muted f-14">Developer</p>
+                            </div>
+                        </div>
+
+                        <div class="item mr-2 ml-2 mt-4">
+                            <div class="client-box-2 text-center">
+                                <div class="client-desc-2 bg-light p-4">
+                                    <p class="mb-5">Mauris interdum diame faucibusthey pulvinar erat curabitur quis porta erat etiam auctor blandit faucibus on phasellus the quam semptu semper dignissim.</p>
+                                </div>
+                                <div class="client-img-2">
+                                    <img src="{% static 'generateletter/images/user/img-4.jpg' %}" class="img-fluid rounded-circle" alt="">
+                                </div>
+                                <h5>James Lackey</h5>
+                                <p class="text-muted f-14">Ceo </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            </div>
+    </section>
+    <!-- END Clients -->
+    <!-- START FOOTER -->
+    <section class="section bg-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-box">
+                        <h2 class="footer-heading text-uppercase">
+                        MY VISA LETTER
+                    </h2>
+
+                        <p class="footer-info mt-4 f-15">Praesent cursus accumsan luctus morbi ullamcorper laoreet magna vulputate quis integer fermentum cursus etiam pulvinar magna venenatis cursus.</p>
+                        <div class="mt-4">
+                            <ul class="list-inline subscribe-social">
+                                <li class="list-inline-item"><a href="" class="social-icon"><i class="mdi mdi-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="" class="social-icon"><i class="mdi mdi-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="" class="social-icon"><i class="mdi mdi-linkedin"></i></a></li>
+                                <li class="list-inline-item"><a href="" class="social-icon"><i class="mdi mdi-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="footer-box">
+                        <h5 class="footer-heading text-uppercase">
+                        Quick links
+                    </h5>
+
+                        <ul class="list-unstyled footer-link mt-4">
+                            <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Features</a></li>
+                            <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>About Us</a></li>
+                            <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Client</a></li>
+                            <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Pricing</a></li>
+                            <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Team</a></li>
+                            <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Contect</a></li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="footer-box">
+                        <h5 class="footer-heading text-uppercase">
+                        Ressources
+                    </h5>
+
+                        <ul class="list-unstyled footer-link mt-4">
+                            <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Monitoring</a></li>
+                            <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Video Tutorial</a></li>
+                            <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Term & Service</a></li>
+                            <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Blog</a></li>
+                            <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Yearia API</a></li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="footer-box">
+                        <h5 class="footer-heading text-uppercase">
+                        Subscribe Now
+                    </h5>
+
+                        <p class="footer-info mt-4 f-15">Pellentesque volutpat eleifend metus suspendisse feugiat aliquam posuere tellus magna efficitur pellentesque.</p>
+
+                        <div class="footer-subcribe mt-4">
+                            <form action="#">
+                                <input placeholder="Email" type="text">
+                                <button type="submit" class="btn btn-custom"><i class="mdi mdi-airplane"></i></button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <hr class="mt-4" />
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-alt text-center">
+                        <p class="footer-info f-15 mb-0 mt-3">&copy;2019 MY VISA LETTER. All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END FOOTER -->
+    
+    <!-- JAVASCRIPTS -->
+    <script src="{% static 'generateletter/js/index/jquery.min.js' %}"></script>
+    <script src="{% static 'generateletter/js/index/popper.min.js' %}"></script>
+    <script src="{% static 'generateletter/js/index/bootstrap.min.js' %}"></script>
+    <script src="{% static 'generateletter/js/index/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'generateletter/js/index/scrollspy.min.js' %}"></script>
+    <script src="{% static 'generateletter/js/index/counter.init.js' %}"></script>
+    <script src="{% static 'generateletter/js/index/contact-form.init.js' %}"></script>
+    <!-- owl-carousel -->
+    <script src="{% static 'generateletter/js/index/owl.carousel.min.js' %}"></script>
+    <!-- Magnific Popup -->
+    <script src="{% static 'generateletter/js/index/jquery.magnific-popup.min.js' %}"></script>
+    <!-- JARALLAX JS -->
+    <script src="{% static 'generateletter/js/index/jarallax.js' %}"></script>
+    <script src="{% static 'generateletter/js/index/app.js' %}"></script>
+</body>
+
+</html>

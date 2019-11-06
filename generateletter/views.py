@@ -15,15 +15,15 @@ from django.contrib.auth.hashers import make_password
 # Our original index view function
 # Corresponds to original_index.html (rename it to index.html to use it!)
 
-# def index(request):
-#     my_dict = {'insert_me':"Now I am coming from first_app/index.html!"}
-#     # Make sure this is pointing to the correct index
-#     return render(request,'first_app/index.html',context=my_dict)
+def index(request):
+    data = { }
+    return render(request, 'generateletter/index.html', data)
 
 
 def users(request):
+    user_role=request.user.user_role
     user_list = CustomUserM.objects.all()
-    user_dict = {'userlist':user_list}
+    user_dict = {'userlist':user_list,'user_role':user_role}
     return render(request,'generateletter/userlist.html', user_dict)
 
 @method_decorator(login_required, name='dispatch')
@@ -43,11 +43,17 @@ class gen_eng_visa(DetailView):
     model = Visaletters
     context_object_name = "detail_visa"
     template_name = "generateletter/gen_eng_visa.html"
+  
 
-class gen_rus_visa(DetailView):
+class Eng_stamp_visa(DetailView):
+    model = Visaletters
+    context_object_name = "detail_visa"
+    template_name = "generateletter/Eng_stamp_visa.html"      
+
+class RussianStampVisaLetter(DetailView):
     model = Visaletters
     context_object_name = "russian_visa"
-    template_name = "generateletter/gen_rus_visa.html"
+    template_name = "generateletter/RussianStampVisaLetter.html"    
 
 class gen_eng_voucher(DetailView):
     model = Visaletters
@@ -58,6 +64,7 @@ class gen_rus_voucher(DetailView):
     model = Visaletters
     context_object_name = "russian_voucher"
     template_name = "generateletter/gen_rus_voucher.html"
+    
 
 def error_404_view(request, exception):
     data = {"name": "ThePythonDjango.com"}
@@ -221,3 +228,18 @@ def visa_voucher_detail(request,visa_voucher_id):
                'hotels': translator.translate(russian_visa.hotels),
                }
     return render(request, 'generateletter/gen_rus_voucher.html', { 'russian_visa': russian_visa,'russian': russian })
+
+def visa_letter_no_stamp(request,visa_letter_id):
+    #translator= Translator(to_lang="ru")
+    translator1 = Translator()
+    russian_visa = Visaletters.objects.get(pk=int(visa_letter_id))
+    if(russian_visa.Country.name == "United Kingdom"):
+        country = translator1.translate('United Kingdom of Great Britain and Northern Ireland',dest='ru')
+    else:
+        country = translator1.translate(russian_visa.Country.name,dest='ru')
+    russian = {'Country': country.text,
+               'Routes_and_Places': translator1.translate(russian_visa.Routes_and_Places,dest='ru').text,
+               'hotels': translator1.translate(russian_visa.hotels,dest='ru').text,
+               }
+    return render(request, 'generateletter/gen_rus_visa.html', { 'russian_visa': russian_visa,'russian': russian })    
+

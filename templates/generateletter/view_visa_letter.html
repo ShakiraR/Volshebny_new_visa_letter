@@ -46,8 +46,12 @@
           <!-- Dropdown -->
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton ">
                 <a class="dropdown-item" style="font-size:20px" href="{% url 'Volshebny_visa_letter:gen_eng_visa' pk=acc.pk %}">Generate English visa letter</a>
-                <a class="dropdown-item"  style="font-size:20px" href="{% url 'Volshebny_visa_letter:gen_rus_visa'  pk=acc.pk %}">Generate Russian visa letter</a>
+                <a class="dropdown-item"  style="font-size:20px" href="{% url 'Volshebny_visa_letter:visa' visa_letter_id=acc.pk %}">Generate Russian visa letter</a>
                 <a class="dropdown-item"  style="font-size:20px" href="{% url 'Volshebny_visa_letter:visa_voucher_detail' visa_voucher_id=acc.pk %}">Generate Russian Voucher</a>
+                <a class="dropdown-item"  style="font-size:20px" href="{% url 'Volshebny_visa_letter:gen_eng_voucher'  pk=acc.pk %}">Generate English Voucher</a>
+                <a class="dropdown-item"  style="font-size:20px" href="{% url 'Volshebny_visa_letter:RussianStampVisaLetter' pk=acc.pk  %}">Generate Russian Stamped Visa Letter</a>
+                <a class="dropdown-item"  style="font-size:20px" href="{% url 'Volshebny_visa_letter:English_stamp_visa' pk=acc.pk %}">Generate English Stamped Visa Letter</a>
+
             </div>
           </td>
           <!-- End of dropdown -->

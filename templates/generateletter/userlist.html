@@ -29,7 +29,13 @@
                                  <tr>
                                    <td>{{ person.username}}</td>
                                    <td>{{ person.email}}</td>
-                                   <td>{{ person.user_role}}</td>
+                                   <td class="text">
+                                    {% if person.user_role == 1 %}
+                                    Super Admin
+                                    {% else %}
+                                    Admin
+                                    {% endif %}
+                                </td>
                                     
                                 </tr>
                                 {% endfor %}
