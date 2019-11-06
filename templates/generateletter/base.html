@@ -22,7 +22,7 @@
 <body>
     <div>
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #1f5b99">
-            <a class="navbar-brand" href="#" style="color: #ffffff">Volshebny Visa Letter Generator</a>
+            <a class="navbar-brand" href="#" style="color: #ffffff">MyVisaLetter.com</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -30,21 +30,29 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'Volshebny_visa_letter:visa_letter_form_submit'  %}" style="color: #ffffff">Generate Visa Letter <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'Volshebny_visa_letter:view_visa_letter' %}" style="color: #ffffff">View All Visa Letter</a>
+                        <a class="nav-link" href="{% url 'Volshebny_visa_letter:view_visa_letter' %}" style="color: #ffffff">Documents</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'Volshebny_visa_letter:users' %}" style="color: #ffffff">Users</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'Volshebny_visa_letter:reports' %}" style="color: #ffffff">Report</a>
+                        <a class="nav-link" href="{% url 'Volshebny_visa_letter:Organisation' %}" style="color: #ffffff">Oraganization</a>
                     </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="{% url 'Volshebny_visa_letter:Myprofile' %}" style="color: #ffffff">MyProfile</a>
+                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Volshebny_visa_letter:reports' %}" style="color: #ffffff">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="btn navbar-btn btn-success" href="{% url 'Volshebny_visa_letter:visa_letter_form_submit'  %}">Generate New Visa Documents</a>
+                        </li>
+
+
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <button class="btn btn-success my-2 my-sm-0" type="submit">Logout</button>
-                </form>
+                        <a class="btn navbar-btn btn-success" href="{% url 'Volshebny_visa_letter:Login'  %}">Logout</a>
+                    </form>
             </div>
         </nav>
     </div><br><br>

@@ -5,15 +5,22 @@ from generateletter import views
 app_name = 'Volshebny_visa_letter'
 
 urlpatterns = [
-    path("index", views.index, name="index"),    
+    #Index Page Url
+    path("abc", views.index, name="index"),    
+    #View Visa letter Url
     path("", views.list_view.as_view(), name="view_visa_letter"),
-   # path("list", views.list_view.as_view(), name="list"),
     path("list_copy", views.list_view_copy.as_view(), name="listcopy"),
+    #Profile Url
     path("Myprofile", views.Myprofile, name="Myprofile"),
+    #Display list of oraganization Url 
     path("Organisation", views.Oraganisation, name="Organisation"),
+    #Display list of Users Url 
     path("users", views.users, name="users"),
+    #Display Reports Url
     path("reports", views.reports, name="reports"),
+    #Generate Visa letter Url
     path("visa_letter_form_submit", views.visa_letter_form_submit, name="visa_letter_form_submit"),
+    #Dictionary Passed of Oraganization
     path("generate_visa_letter", views.visagenerateform, name="generate_visa_letter"),
     re_path(r'^gen_rus_visa/(?P<visa_letter_id>\d+)/$',views.visa_letter_no_stamp,name='visa_letter_no_stamp'),
     path("gen_rus_voucher/<int:pk>", views.visa_voucher_detail, name="gen_rus_voucher"),
