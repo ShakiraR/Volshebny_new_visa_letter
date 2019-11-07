@@ -30,7 +30,7 @@
                         <h3>Register</h3>
                         <p>Enter your details to make a new account!</p>
                         <div class="page-links">
-                            <a href="#">Login</a><a href="#" class="active">Register</a>
+                            <a href="{% url 'Volshebny_visa_letter:Login' %}">Login</a><a href="{% url 'Volshebny_visa_letter:Signup' %}" class="active">Register</a>
                         </div>
                         <form method="post" action="#">
                             {% csrf_token %}

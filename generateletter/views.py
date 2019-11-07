@@ -195,6 +195,16 @@ def visa_letter_form_submit(request):
           Passport_Number_3 = request.POST['Passport_Number_3']
           Date_Of_Birth_3 = request.POST['Date_Of_Birth_3']
           Sex_3 = request.POST['Sex_3']
+          firstname_4 = request.POST['firstname_4']
+          lastname_4 =request.POST['lastname_4']
+          Passport_Number_4 = request.POST['Passport_Number_4']
+          Date_of_Birth_4 = request.POST['Date_of_Birth_4']
+          Sex_4 = request.POST['Sex_4']
+          firstname_5 = request.POST['firstname_5']
+          lastname_5 =request.POST['lastname_5']
+          Passport_Number_5 = request.POST['Passport_Number_5']
+          Date_Of_Birth_5 = request.POST['Date_Of_Birth_5']
+          Sex_5 = request.POST['Sex_5']
           visaletter=Visaletters.objects.create(Organization_Details = Name_of_Organization,
                                                 multiplicity = multiplicity, no_passengers=no_passengers, Country=Country, entry_from= entry_from,
                                                 departure_to=departure_to,
@@ -218,7 +228,18 @@ def visa_letter_form_submit(request):
                                                 lastname_3=lastname_3,
                                                 Passport_Number_3=Passport_Number_3,
                                                 Date_Of_Birth_3=Date_Of_Birth_3,
-                                                Sex_3=Sex_3)
+                                                Sex_3=Sex_3,
+                                                firstname_4=firstname_4,
+                                                lastname_4=lastname_4,
+                                                Passport_Number_4=Passport_Number_4,
+                                                Date_Of_Birth_4=Date_of_Birth_4,
+                                                Sex_4=Sex_4,
+                                                firstname_5=firstname_5,
+                                                lastname_5=lastname_5,
+                                                Passport_Number_5=Passport_Number_5,
+                                                Date_Of_Birth_5=Date_Of_Birth_5,
+                                                Sex_5=Sex_5)
+                                                
                                             
 
     #return render(request, 'generateletter/generate_visa_letter.html') 
