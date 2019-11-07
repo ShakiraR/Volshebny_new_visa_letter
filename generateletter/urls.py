@@ -18,17 +18,25 @@ urlpatterns = [
     path("users", views.users, name="users"),
     #Display Reports Url
     path("reports", views.reports, name="reports"),
-    #Generate Visa letter Url
+    #Generate Visa letter form
     path("visa_letter_form_submit", views.visa_letter_form_submit, name="visa_letter_form_submit"),
     #Dictionary Passed of Oraganization
     path("generate_visa_letter", views.visagenerateform, name="generate_visa_letter"),
+    #Genarate Russian Visa letter withpout stamp
     re_path(r'^gen_rus_visa/(?P<visa_letter_id>\d+)/$',views.visa_letter_no_stamp,name='visa_letter_no_stamp'),
+    #Genearate Russian Voucher
     path("gen_rus_voucher/<int:pk>", views.visa_voucher_detail, name="gen_rus_voucher"),
+    #Generate Engllish Visa
     path("english_visa/<int:pk>", views.gen_eng_visa.as_view(), name="gen_eng_visa"),
+    #Generate English visa with stamp
     path("English_stamp_visa/<int:pk>", views.Eng_stamp_visa.as_view(), name="English_stamp_visa"),
+    #Geerate Russian stamp visa letter
     path("RussianStampVisaLetter/<int:pk>", views.RussianStampVisaLetter.as_view(), name="RussianStampVisaLetter"),
+    #Generate English Voucher
     path("english_voucher/<int:pk>", views.gen_eng_voucher.as_view(), name="gen_eng_voucher"),
+     
     re_path(r'^visa_letters/(?P<visa_letter_id>\d+)/$',views.visa_letter_detail,name='visa'),
+
     re_path(r'^visa_vouchers/(?P<visa_voucher_id>\d+)/$',views.visa_voucher_detail,name='visa_voucher_detail'),
     path("AllVisaDoc", views.AllVisaDoc, name="AllVisaDoc"),
     path("MumbaiVisa", views.MumbaiVisa, name="MumbaiVisa"),
@@ -36,6 +44,7 @@ urlpatterns = [
     path("RussiaVisa", views.RussiaVisa, name="RussiaVisa"),
     path("Login", views.Login, name="Login"),
     path("Signup", views.Signup, name="Signup"),
+    path("terms_cond", views.terms_cond, name="terms_cond"),
 ]
 
 admin.site.index_title = "Welcome, Lets Manage Visa Letters and Vouchers With Ease"

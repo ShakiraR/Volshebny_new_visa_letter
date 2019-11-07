@@ -56,10 +56,10 @@
                         <a href="#home" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#features" class="nav-link">Features</a>
+                        <a href="#features" class="nav-link">Process</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#services" class="nav-link">services</a>
+                        <a href="#services" class="nav-link">Features</a>
                     </li>
                     <li class="nav-item">
                         <a href="#tutorial" class="nav-link">Tutorial</a>
@@ -85,10 +85,10 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="home-content text-center mt-5 pt-4">
-                                <p class="home-desc mx-auto f-16">Best Tool for Travel agencies.</p>
+                                <p class="home-desc mx-auto f-16">Best Tool for Travel Agencies.</p>
                                 <h2 class="home-title-2 line-height_1_3">Generate Visa Letter of any Country , of any Language with ease</h2>
                                 <div class="mt-4">
-                                    <a href="" class="btn btn-custom">Quick Demo</a>
+                                    <a href="{% url 'Volshebny_visa_letter:Login' %}" class="btn btn-custom">Quick Demo</a>
                                 </div>
                                 <div class="home-mockup-2">
                                     <img src="{% static 'generateletter/images/form.png' %}" class="img-fluid" alt="">
@@ -109,7 +109,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-content text-center">
-                        <h3 class="title-heading">Our Processes</h3>
+                        <h3 class="title-heading">Our Process</h3>
                         <p class="title-desc text-muted mt-3">Generate Visa Letter in two simple steps. </p>
                         <div class="title-border mt-4"></div>
                     </div>
@@ -126,8 +126,8 @@
                 <div class="col-lg-5">
                     <div class="features-content mt-4">
                         <p class="features-count-2 text-custom">01</p>
-                        <h5>The first steps is to fill a form in english</h5>
-                        <p class="text-muted mt-3">Kuspendisse pellentesque lacinia maximus odio dolorem ipsum quia dolor viverra ipsum sollicitudin lectus nibh urna aenean metus velit dignissim varius porta massa vivamus congue quis finibus malesuada pellentesque.</p>
+                        <h5>To fill a form in english</h5>
+                        <p class="text-muted mt-3">We have a simple one page form. Passengers,Organizations,trips details and the desired language to be translated in have to be entered in english.</p>
                        
                     </div>
                 </div>
@@ -137,8 +137,8 @@
                 <div class="col-lg-5">
                     <div class="features-content mt-4">
                         <p class="features-count-2 text-custom">02</p>
-                        <h5>The second step is to download the visa document your desired language.</h5>
-                        <p class="text-muted mt-3">Ruspendisse pellentesque lacinia maximus odio viverra ipsum sollicitudin lectus nibh welcomed and every pain urna aenean metus velit dignissim varius porta massa vivamus congue quis finibus malesuada pellentesque.</p>
+                        <h5>To download the visa document in your desired language.</h5>
+                        <p class="text-muted mt-3">We generate the visa document in english and your desired language.You have to simply download the pdf of your visa letter.</p>
 
                         <div class="mt-4">
                             <a href="" class="btn btn-sm btn-custom">Quick Demo</a>
@@ -165,7 +165,7 @@
                 <div class="col-lg-12">
                     <div class="title-content text-center">
                         <h3 class="title-heading">Our Features</h3>
-                        <p class="title-desc text-muted mt-3">Phasellus ultricies sapien quis neque tempor in molestie erat venenatis condimentum tincidunt iaculis volutpat gravida quam viverra lectus. </p>
+                        <p class="title-desc text-muted mt-3">MyVisaLetter is a simple yet powerful visa letter translation tool developed to make travel agents life simple. </p>
                         <div class="title-border mt-4"></div>
                     </div>
                 </div>
@@ -177,28 +177,28 @@
                         <div class="services-icon">
                             <i><img src="{% static 'generateletter/images/services/writeletter.png' %}"></i>
                         </div>
-                        <h5 class="mt-4">UI/UX Design</h5>
-                        <p class="text-muted mt-4 mb-0">Sollicitudin donec maximus mauris volupat phatra quisque congue portitor metus the vestibulum trisque ornare.</p>
+                        <h5 class="mt-4">Simple Process</h5>
+                        <p class="text-muted mt-4 mb-0">.We have a simple two steps process.Fill the form and download the visa document.</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4">
                     <div class="services-box text-center mt-4">
                         <div class="services-icon">
-                             <i><img src="{% static 'generateletter/images/services/writeletter.png' %}"></i>
+                             <i><img src="{% static 'generateletter/images/services/translator.png' %}"></i>
                         </div>
-                        <h5 class="mt-4">Branding Identity</h5>
-                        <p class="text-muted mt-4 mb-0">Mauris consectetur lectus sodales in auctor laoret eleifend lectus mauri the diam ligula on blandit fusce sagittis.</p>
+                        <h5 class="mt-4">Accurate Translation</h5>
+                        <p class="text-muted mt-4 mb-0">We use powerful APIs which supports more than 100 accurate translation languages and have more than 100000+ accurate translations .</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4">
                     <div class="services-box text-center mt-4">
                         <div class="services-icon">
-                             <i><img src="{% static 'generateletter/images/services/writeletter.png' %}"></i>
+                             <i><img src="{% static 'generateletter/images/services/document.png' %}"></i>
                         </div>
-                        <h5 class="mt-4">Creative Idea</h5>
-                        <p class="text-muted mt-4 mb-0">Quisque elementum the blandit the malesuada bibndum tincidunt interdum odio accumsan interdum facere.</p>
+                        <h5 class="mt-4">Total Customizable</h5>
+                        <p class="text-muted mt-4 mb-0">MyVisaLetter can be customized according to travel agents needs and requirements.For more details please call 7045678009</p>
                     </div>
                 </div>
 
@@ -223,7 +223,7 @@
                                 <img src="{% static 'generateletter/images/coffee-cup1.png' %}">
                         </div>
                         <div class="counter-content-2 mt-4">
-                            <h1><span class="counter-value" data-count="1200">652</span></h1>
+                            <h1><span class="counter-value" data-count="1800">652</span></h1>
                             <h5 class="mb-0 mt-4">Cups of coffee</h5>
                         </div>
                     </div>
@@ -237,8 +237,8 @@
                         </div>
 
                         <div class="counter-content-2 mt-4">
-                            <h1><span class="counter-value" data-count="4900">2356</span></h1>
-                            <h5 class="mb-0 mt-4">Happy Clients</h5>
+                            <h1><span class="counter-value" data-count="9">0</span></h1>
+                            <h5 class="mb-0 mt-4">Happy Travel Agents</h5>
                         </div>
                     </div>
 
@@ -253,7 +253,7 @@
 
                         <div class="counter-content-2 mt-4">
                             <h1><span class="counter-value" data-count="5645">2358</span></h1>
-                            <h5 class="mb-0 mt-4">Project finish</h5>
+                            <h5 class="mb-0 mt-4">Succesfull Translations</h5>
                         </div>
                     </div>
                 </div>
@@ -266,8 +266,8 @@
                         </div>
 
                         <div class="counter-content-2 mt-4">
-                            <h1><span class="counter-value" data-count="6000">3200</span></h1>
-                            <h5 class="mb-0 mt-4">Win Awards</h5>
+                            <h1><span class="counter-value" data-count="5">0</span></h1>
+                            <h5 class="mb-0 mt-4">Research Papers Published</h5>
                         </div>
                     </div>
                 </div>
@@ -284,7 +284,7 @@
                 <div class="col-lg-12">
                     <div class="title-content text-center">
                         <h3 class="title-heading">Tutorial</h3>
-                        <p class="title-desc text-muted mt-3">Phasellus ultricies sapien quis neque tempor in molestie erat venenatis condimentum tincidunt iaculis volutpat gravida quam viverra lectus. </p>
+                        <p class="title-desc text-muted mt-3">Videos from our team to get you started quickly. </p>
                         <div class="title-border mt-4"></div>
                     </div>
                 </div>
@@ -294,21 +294,24 @@
                 <div class="col-lg-4">
                     <div class="blog-box-2 mt-4">
                         <div class="blog-img-2">
-                            <img src="{% static 'generateletter/images/blog/img-1.jpg' %}" class="img-fluid" alt="">
+                           <video width="350" height="280" controls>
+                               <source src="{% static 'generateletter/video/fillform.mp4' %}" type="video/mp4">
+                            </video>
+                            <!-- <img src="{% static 'generateletter/images/blog/img-1.jpg' %}" class="img-fluid" alt=""> -->
                         </div>
 
                         <div class="bg-white p-3">
                             <div class="blog-icon-2">
-                                <i class="pe-7s-camera"></i>
+                                <!-- <i class="pe-7s-camera"></i> -->
                             </div>
-                            <p class="text-muted f-15">20/08/2018</p>
+                            <!-- <p class="text-muted f-15">20/08/2018</p> -->
                             <div class="blog-title">
-                                <a href="">Phasellus semper habitant fames.</a>
+                                <a href="">Fill the form.</a>
                             </div>
                             <div class="blog-border-2 mt-3"></div>
-                            <p class="text-muted f-15 mt-3">Quisque cursus her porttitor massa aliquam turpis ullmcorper faucibus the suspendisse gravida posuere turpis aliquam.</p>
+                            <p class="text-muted f-15 mt-3">We have a simple one page form. Passengers,Organizations,trips details and the desired language to be translated in have to be entered in english.</p>
                             <div class="mt-3">
-                                <a href="" class="text-custom">Read more<i class="mdi mdi-chevron-double-right"></i></a>
+                                <!-- <a href="" class="text-custom">Read more<i class="mdi mdi-chevron-double-right"></i></a> -->
                             </div>
                         </div>
                     </div>
@@ -317,22 +320,25 @@
                 <div class="col-lg-4">
                     <div class="blog-box-2 mt-4">
                         <div class="blog-img-2">
-                            <img src="{% static 'generateletter/images/blog/img-2.jpg' %}" class="img-fluid" alt="">
+                                <video width="350" height="280" controls>
+                                        <source src="{% static 'generateletter/video/visaletter.mp4' %}" type="video/mp4">
+                                     </video>
+                            <!-- <img src="{% static 'generateletter/images/blog/img-2.jpg' %}" class="img-fluid" alt=""> -->
                         </div>
 
                         <div class="bg-white p-3">
                             <div class="blog-icon-2">
-                                <i class="pe-7s-camera"></i>
+                                <!-- <i class="pe-7s-camera"></i> -->
                             </div>
 
-                            <p class="text-muted f-15">25/08/2018</p>
+                            <!-- <p class="text-muted f-15">25/08/2018</p> -->
                             <div class="blog-title">
-                                <a href="">Fabitant tristie senectus maleda.</a>
+                                <a href="">Download the visa letter.</a>
                             </div>
                             <div class="blog-border-2 mt-3"></div>
-                            <p class="text-muted f-15 mt-3">Muisque cursus her porttitor massa aliquam turpis ullmcorper faucibus the suspendisse gravida posuere turpis aliquam.</p>
+                            <p class="text-muted f-15 mt-3">We generate the visa document in english and your desired language.You have to simply download the pdf of your visa letter.</p>
                             <div class="mt-3">
-                                <a href="" class="text-custom">Read more<i class="mdi mdi-chevron-double-right"></i></a>
+                                <!-- <a href="" class="text-custom">Read more<i class="mdi mdi-chevron-double-right"></i></a> -->
                             </div>
                         </div>
                     </div>
@@ -341,29 +347,32 @@
                 <div class="col-lg-4">
                     <div class="blog-box-2 mt-4">
                         <div class="blog-img-2">
-                            <img src="{% static 'generateletter/images/blog/img-3.jpg' %}" class="img-fluid" alt="">
+                                <video width="350" height="280" controls>
+                                        <source src="{% static 'generateletter/video/contact.mp4' %}" type="video/mp4">
+                                     </video>
+                            <!-- <img src="{% static 'generateletter/images/blog/img-3.jpg' %}" class="img-fluid" alt=""> -->
                         </div>
 
                         <div class="bg-white p-3">
                             <div class="blog-icon-2">
-                                <i class="pe-7s-camera"></i>
+                                <!-- <i class="pe-7s-camera"></i> -->
                             </div>
 
-                            <p class="text-muted f-15">25/08/2018</p>
+                            <!-- <p class="text-muted f-15">25/08/2018</p> -->
 
                             <div class="blog-title">
-                                <a href="">Mauris pulvinar aliquam aliquet.</a>
+                                <a href="">How to contact us.</a>
                             </div>
                             <div class="blog-border-2 mt-3"></div>
-                            <p class="text-muted f-15 mt-3">Suisque cursus her porttitor massa aliquam turpis ullmcorper faucibus the suspendisse gravida posuere turpis aliquam.</p>
+                            <p class="text-muted f-15 mt-3">There is a form above.Please fill the form above or contact us at 7045678009</p>
                             <div class="mt-3">
-                                <a href="" class="text-custom">Read more<i class="mdi mdi-chevron-double-right"></i></a>
+                                <!-- <a href="" class="text-custom">Read more<i class="mdi mdi-chevron-double-right"></i></a> -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+<!-- 
              <div class="row mt-5 mt-3">
                 <div class="col-lg-4">
                     <div class="blog-box-2 mt-4">
@@ -438,7 +447,7 @@
                 </div>
             </div>
 
-            
+             -->
             
         </div>
     </section>
@@ -451,8 +460,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="cta-box text-center">
-                        <h3 class="cta-title">30 day free trial, download the dashboard.</h3>
-                        <p class="cta-desc mt-4 f-16">Mauris metus ornare sollicitudin porta mollis commodo maecenas ullamcorper metus quis pharetra massa.</p>
+                        <h3 class="cta-title">Get a discount of 15% on the annual maintainance charges.</h3>
+                        <p class="cta-desc mt-4 f-16">We have minimum subscription charges. For more details.</p>
 
                         <div class="mt-5">
                             <button type="button" class="btn btn-sm btn-custom" data-toggle="modal" data-target="#ModalCenter">
@@ -471,7 +480,7 @@
                                     <div class="modal-body">
                                         <div class="custom-form mt-4">
                                             <div id="message"></div>
-                                            <form method="post" action="#" name="contact-form" id="contact-form">
+                                            <form method="post" action="{% url 'Volshebny_visa_letter:index' %}" name="contact-form" id="contact-form" onSubmit="alert('Thank you. Our Team Will get back to you as soon as possible.')">
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-4">
@@ -490,7 +499,7 @@
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="col-sm-12 text-right">
-                                                        <input type="submit" id="submit" name="send" class="submitBnt btn btn-sm btn-custom" value="Send Message">
+                                                        <input type="submit" id="submit" name="send" class="submitBnt btn btn-sm btn-custom" value="Send Message" onclick="">
                                                         <div id="simple-msg"></div>
                                                     </div>
                                                 </div>
@@ -517,7 +526,7 @@
                 <div class="col-lg-12">
                     <div class="title-content text-center">
                         <h3 class="title-heading">Our clients said</h3>
-                        <p class="title-desc text-muted mt-3">Phasellus ultricies sapien quis neque tempor in molestie erat venenatis condimentum tincidunt iaculis volutpat gravida quam viverra lectus. </p>
+                        <p class="title-desc text-muted mt-3">We always want to hear what our clients have to say.We build.We learn and We improve.. </p>
                         <div class="title-border mt-4"></div>
                     </div>
                 </div>
@@ -529,12 +538,12 @@
                         <div class="item mr-2 ml-2 mt-4">
                             <div class="client-box-2 text-center">
                                 <div class="client-desc-2 bg-light p-4 rounded">
-                                    <p class="mb-5">Mauris interdum diame faucibusthey pulvinar erat curabitur quis porta erat etiam auctor blandit faucibus on phasellus the quam semptu semper dignissim.</p>
+                                    <p class="mb-5" >I will recommend you to my colleagues.It's really wonderfull.No matter where you go. MyVisaLetterGenerator is the easiest and collest one to genearate visa documents.</p>
                                 </div>
                                 <div class="client-img-2">
-                                    <img src="{% static 'generateletter/images/user/img-1.jpg' %}" class="img-fluid rounded-circle" alt="">
+                                    <!-- <img src="{% static 'generateletter/images/user/img-1.jpg' %}" class="img-fluid rounded-circle" alt="testimonial1"> -->
                                 </div>
-                                <h5>Joey Mackey</h5>
+                                <h5>Soham Thaker</h5>
                                 <p class="text-muted f-14">Designer</p>
                             </div>
                         </div>
@@ -542,10 +551,10 @@
                         <div class="item mr-2 ml-2 mt-4">
                             <div class="client-box-2 text-center">
                                 <div class="client-desc-2 bg-light p-4">
-                                    <p class="mb-5">Mauris interdum diame faucibusthey pulvinar erat curabitur quis porta erat etiam auctor blandit faucibus on phasellus the quam semptu semper dignissim.</p>
+                                    <p class="mb-5">Keep up the excellent work.It's just amazing.Buy this now.I wish i would have thought of it first and the visa letters coul have been generated easily..</p>
                                 </div>
                                 <div class="client-img-2">
-                                    <img src="{% static 'generateletter/images/user/img-2.jpg' %}" class="img-fluid rounded-circle" alt="">
+                                    <!-- <img src="{% static 'generateletter/images/user/img-2.jpg' %}" class="img-fluid rounded-circle" > -->
                                 </div>
                                 <h5>Julie Jones</h5>
                                 <p class="text-muted f-14">Manager</p>
@@ -555,10 +564,10 @@
                         <div class="item mr-2 ml-2 mt-4">
                             <div class="client-box-2 text-center">
                                 <div class="client-desc-2 bg-light p-4">
-                                    <p class="mb-5">Mauris interdum diame faucibusthey pulvinar erat curabitur quis porta erat etiam auctor blandit faucibus on phasellus the quam semptu semper dignissim.</p>
+                                    <p class="mb-5">MyVisaLetter.com is great due to its translation in different languages.The service is excellent.It has made Visa generation easy in different languages.</p>
                                 </div>
                                 <div class="client-img-2">
-                                    <img src="{% static 'generateletter/images/user/img-3.jpg' %}" class="img-fluid rounded-circle" alt="">
+                                    <!-- <img src="{% static 'generateletter/images/user/img-3.jpg' %}" class="img-fluid rounded-circle" alt=""> -->
                                 </div>
                                 <h5>John Doe</h5>
                                 <p class="text-muted f-14">Developer</p>
@@ -568,10 +577,10 @@
                         <div class="item mr-2 ml-2 mt-4">
                             <div class="client-box-2 text-center">
                                 <div class="client-desc-2 bg-light p-4">
-                                    <p class="mb-5">Mauris interdum diame faucibusthey pulvinar erat curabitur quis porta erat etiam auctor blandit faucibus on phasellus the quam semptu semper dignissim.</p>
+                                    <p class="mb-5">I strongly recommend MyVisaLetter to everyone interested in running a succesfull Tour business. It has been very helpful to me.</p>
                                 </div>
                                 <div class="client-img-2">
-                                    <img src="{% static 'generateletter/images/user/img-4.jpg' %}" class="img-fluid rounded-circle" alt="">
+                                    <!-- <img src="{% static 'generateletter/images/user/img-4.jpg' %}" class="img-fluid rounded-circle" alt=""> -->
                                 </div>
                                 <h5>James Lackey</h5>
                                 <p class="text-muted f-14">Ceo </p>
@@ -596,14 +605,14 @@
                     </h2>
 
                         <p class="footer-info mt-4 f-15">Praesent cursus accumsan luctus morbi ullamcorper laoreet magna vulputate quis integer fermentum cursus etiam pulvinar magna venenatis cursus.</p>
-                        <div class="mt-4">
+                        <!-- <div class="mt-4">
                             <ul class="list-inline subscribe-social">
                                 <li class="list-inline-item"><a href="" class="social-icon"><i class="mdi mdi-facebook"></i></a></li>
                                 <li class="list-inline-item"><a href="" class="social-icon"><i class="mdi mdi-twitter"></i></a></li>
                                 <li class="list-inline-item"><a href="" class="social-icon"><i class="mdi mdi-linkedin"></i></a></li>
                                 <li class="list-inline-item"><a href="" class="social-icon"><i class="mdi mdi-google-plus"></i></a></li>
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -619,7 +628,7 @@
                             <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Client</a></li>
                             <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Pricing</a></li>
                             <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Team</a></li>
-                            <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Contect</a></li>
+                            <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Contact</a></li>
 
                         </ul>
                     </div>
@@ -629,15 +638,14 @@
                 <div class="col-lg-2">
                     <div class="footer-box">
                         <h5 class="footer-heading text-uppercase">
-                        Ressources
+                        Resources
                     </h5>
 
                         <ul class="list-unstyled footer-link mt-4">
-                            <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Monitoring</a></li>
-                            <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Video Tutorial</a></li>
-                            <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Term & Service</a></li>
-                            <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Blog</a></li>
-                            <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Yearia API</a></li>
+                            <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Tutorial</a></li>
+                            <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Manual</a></li>
+                            <li><a href="{% url 'Volshebny_visa_letter:terms_cond' %}"><i class="mdi mdi-chevron-right mr-2"></i>Term & Conditions</a></li>
+                            
 
                         </ul>
 
@@ -650,7 +658,7 @@
                         Subscribe Now
                     </h5>
 
-                        <p class="footer-info mt-4 f-15">Pellentesque volutpat eleifend metus suspendisse feugiat aliquam posuere tellus magna efficitur pellentesque.</p>
+                        <p class="footer-info mt-4 f-15">Please enter your email below.Our team will get in touch</p>
 
                         <div class="footer-subcribe mt-4">
                             <form action="#">
@@ -668,7 +676,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer-alt text-center">
-                        <p class="footer-info f-15 mb-0 mt-3">&copy;2019 MY VISA LETTER. All Rights Reserved</p>
+                        <p class="footer-info f-15 mb-0 mt-3">&copy;Designed and developed by Finity TechServ</p>
                     </div>
                 </div>
             </div>

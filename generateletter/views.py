@@ -19,6 +19,10 @@ def index(request):
     data = { }
     return render(request, 'generateletter/index.html', data)
 
+def terms_cond(request):
+    data = { }
+    return render(request, 'generateletter/terms_cond.html', data)    
+
 
 def users(request):
     user_role=request.user.user_role
