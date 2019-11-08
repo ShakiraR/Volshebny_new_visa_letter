@@ -9,6 +9,8 @@ from django.urls import reverse_lazy, reverse
 from translate import Translator
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.hashers import make_password
+from bootstrap_modal_forms.generic import (BSModalCreateView,BSModalUpdateView,BSModalReadView,BSModalDeleteView)
+from generateletter.forms import CustomUserCreationForm,CustomUserForm,OrganizationForm
 
 # Create your views here.
 
@@ -198,7 +200,7 @@ def visa_letter_form_submit(request):
           firstname_4 = request.POST['firstname_4']
           lastname_4 =request.POST['lastname_4']
           Passport_Number_4 = request.POST['Passport_Number_4']
-          Date_of_Birth_4 = request.POST['Date_of_Birth_4']
+          Date_Of_Birth_4 = request.POST['Date_Of_Birth_4']
           Sex_4 = request.POST['Sex_4']
           firstname_5 = request.POST['firstname_5']
           lastname_5 =request.POST['lastname_5']
@@ -206,7 +208,10 @@ def visa_letter_form_submit(request):
           Date_Of_Birth_5 = request.POST['Date_Of_Birth_5']
           Sex_5 = request.POST['Sex_5']
           visaletter=Visaletters.objects.create(Organization_Details = Name_of_Organization,
-                                                multiplicity = multiplicity, no_passengers=no_passengers, Country=Country, entry_from= entry_from,
+                                                multiplicity = multiplicity, 
+                                                no_passengers=no_passengers, 
+                                                Country=Country, 
+                                                entry_from= entry_from,
                                                 departure_to=departure_to,
                                                 Tourism=Tourism,
                                                 Visa_Letter_Number=Visa_Letter_Number,
@@ -232,7 +237,7 @@ def visa_letter_form_submit(request):
                                                 firstname_4=firstname_4,
                                                 lastname_4=lastname_4,
                                                 Passport_Number_4=Passport_Number_4,
-                                                Date_Of_Birth_4=Date_of_Birth_4,
+                                                Date_Of_Birth_4=Date_Of_Birth_4,
                                                 Sex_4=Sex_4,
                                                 firstname_5=firstname_5,
                                                 lastname_5=lastname_5,
@@ -266,5 +271,30 @@ def visa_letter_no_stamp(request,visa_letter_id):
                'Routes_and_Places': translator1.translate(russian_visa.Routes_and_Places,dest='ru').text,
                'hotels': translator1.translate(russian_visa.hotels,dest='ru').text,
                }
-    return render(request, 'generateletter/gen_rus_visa.html', { 'russian_visa': russian_visa,'russian': russian })    
+    return render(request, 'generateletter/gen_rus_visa.html', { 'russian_visa': russian_visa,'russian': russian })
+
+class Add_UsersView(BSModalCreateView):
+    template_name = 'generateletter/add_new_user.html'
+    form_class = CustomUserCreationForm
+    success_message = 'Success: User was added.'
+    success_url = reverse_lazy('generateletter:users')    
+
+class UserUpdateView(BSModalUpdateView):
+    model = CustomUserM
+    template_name = 'generateletter/update_order.html'
+    form_class = CustomUserForm
+    success_message = 'Success: Entry was updated.'
+    success_url = reverse_lazy('generateletter:users')
+
+class UserDeleteView(BSModalDeleteView):
+    model = CustomUserM
+    template_name = 'generateletter/delete_entry.html'
+    success_message = 'Success: Entry was deleted.'
+    success_url = reverse_lazy('generateletter:users')  
+
+class Add_org(BSModalCreateView):
+    template_name = 'generateletter/Add_org.html'
+    form_class = OrganizationForm
+    success_message = 'Success: Organization was added.'
+    success_url = reverse_lazy('generateletter:Organisation')      
 

@@ -45,6 +45,15 @@ urlpatterns = [
     path("Login", views.Login, name="Login"),
     path("Signup", views.Signup, name="Signup"),
     path("terms_cond", views.terms_cond, name="terms_cond"),
+
+    path('add_users/',views.Add_UsersView.as_view(),name='add_users'),
+
+    path('userupdate/<int:pk>',views.UserUpdateView.as_view(),name='userupdate'),
+
+    path('userdelete/<int:pk>',views.UserDeleteView.as_view(),name='userdelete'),
+
+    path('Add_org/',views.Add_org.as_view(),name='Add_org'),
+
 ]
 
 admin.site.index_title = "Welcome, Lets Manage Visa Letters and Vouchers With Ease"

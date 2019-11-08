@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "gtranslate",
+    'bootstrap_modal_forms',
+    'widget_tweaks',
     "generateletter",
 ]
 
