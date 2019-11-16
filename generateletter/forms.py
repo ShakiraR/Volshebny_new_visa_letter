@@ -16,4 +16,9 @@ class CustomUserForm(BSModalForm):
 class OrganizationForm(BSModalForm):
     class Meta:
         model = Organization
-        fields = ['Name_of_Organization','Address']             
+        fields = ['Name_of_Organization','Address']
+
+class PaymentStatusForm(BSModalForm):
+    class Meta:
+        model = Visaletters
+        fields = ['Payment_status']        

@@ -10,28 +10,32 @@ from translate import Translator
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.hashers import make_password
 from bootstrap_modal_forms.generic import (BSModalCreateView,BSModalUpdateView,BSModalReadView,BSModalDeleteView)
-from generateletter.forms import CustomUserCreationForm,CustomUserForm,OrganizationForm
+from generateletter.forms import CustomUserCreationForm,CustomUserForm,OrganizationForm,PaymentStatusForm
 
 # Create your views here.
 
 # Our original index view function
 # Corresponds to original_index.html (rename it to index.html to use it!)
 
+#Index View
 def index(request):
     data = { }
     return render(request, 'generateletter/index.html', data)
 
+#Terms View
 def terms_cond(request):
     data = { }
     return render(request, 'generateletter/terms_cond.html', data)    
 
-
+#display user info view
+@login_required(login_url = '/login')
 def users(request):
     user_role=request.user.user_role
     user_list = CustomUserM.objects.all()
     user_dict = {'userlist':user_list,'user_role':user_role}
     return render(request,'generateletter/userlist.html', user_dict)
 
+#view to display all visa letters
 @method_decorator(login_required, name='dispatch')
 class list_view(ListView):
     model = Visaletters
@@ -45,27 +49,31 @@ class list_view_copy(ListView):
     context_object_name = "list_view"
     template_name = "generateletter/list_copy.html"
 
+#view to generate eng visa letter
 class gen_eng_visa(DetailView):
     model = Visaletters
     context_object_name = "detail_visa"
     template_name = "generateletter/gen_eng_visa.html"
   
-
+#view to generate stamped eng visa letter
 class Eng_stamp_visa(DetailView):
     model = Visaletters
     context_object_name = "detail_visa"
     template_name = "generateletter/Eng_stamp_visa.html"      
 
+#view to generate russian stamped view
 class RussianStampVisaLetter(DetailView):
     model = Visaletters
     context_object_name = "russian_visa"
     template_name = "generateletter/RussianStampVisaLetter.html"    
 
+#view to generate eng vouchers
 class gen_eng_voucher(DetailView):
     model = Visaletters
     context_object_name = "english_voucher"
     template_name = "generateletter/gen_eng_voucher.html"
 
+#view to generate russian vouchers
 class gen_rus_voucher(DetailView):
     model = Visaletters
     context_object_name = "russian_voucher"
@@ -76,9 +84,10 @@ def error_404_view(request, exception):
     data = {"name": "ThePythonDjango.com"}
     return render(request,'generateletter/error_500.html', data)
 
-
+#view to display user profile
 def Myprofile(request):
-    data = { }
+    role=request.user.user_role
+    data = {'role': role }
     return render(request, 'generateletter/Myprofile.html', data)
 
 def AllVisaDoc(request):
@@ -101,7 +110,7 @@ def reports(request):
     data = { }
     return render(request, 'generateletter/reports.html', data)
 
-
+#view for login
 def Login(request):
     """Logs in a user if the credentials are valid and the user is active, 
     else redirects to the same page and displays an error message."""
@@ -118,7 +127,7 @@ def Login(request):
 
     else:
         return render(request, 'generateletter/login.html')
-
+#view to register
 def Signup(request):
     """Registers a user"""
     if request.method == "POST":
@@ -143,8 +152,8 @@ def Signup(request):
 # def generate_visa_letter(request):
 #     data = { }
 #     return render(request, 'generateletter/generate_visa_letter.html', data)    
-
-
+#view to generate russian visaletter
+@login_required(login_url = '/login')
 def visa_letter_detail(request,visa_letter_id):
     translator= Translator(to_lang="ru")
     russian_visa = Visaletters.objects.get(pk=int(visa_letter_id))
@@ -154,19 +163,24 @@ def visa_letter_detail(request,visa_letter_id):
                }
     return render(request, 'generateletter/russian_visaletter.html', { 'russian_visa': russian_visa,'russian': russian })
 
+#view get organisation name in generate visa letter form
+@login_required(login_url = '/login')
 def visagenerateform(request):
     OName=Organization.objects.all()
     
     data={'OName': OName}
     return render(request, 'generateletter/generate_visa_letter.html', data )
 
+#view to display organization info
+@login_required(login_url = '/login')
 def Oraganisation(request):
     OName=Organization.objects.all()
     
     data={'OName': OName}
     return render(request, 'generateletter/Organisation.html', data )         
 
-
+#submit view of visa letter form generation
+@login_required(login_url = '/login')
 def visa_letter_form_submit(request):
     if request.method == "POST":
           Name_of_Organization= Organization.objects.get(pk=request.POST['OrganizationName'])
@@ -248,8 +262,10 @@ def visa_letter_form_submit(request):
                                             
 
     #return render(request, 'generateletter/generate_visa_letter.html') 
-    return HttpResponseRedirect(reverse('Volshebny_visa_letter:generate_visa_letter'))                                           
+    return HttpResponseRedirect(reverse('generateletter:generate_visa_letter'))  
 
+ #view to generate russian voucher                                            
+@login_required(login_url = '/login')
 def visa_voucher_detail(request,visa_voucher_id):
     translator= Translator(to_lang="ru")
     russian_visa = Visaletters.objects.get(pk=int(visa_voucher_id))
@@ -259,6 +275,8 @@ def visa_voucher_detail(request,visa_voucher_id):
                }
     return render(request, 'generateletter/gen_rus_voucher.html', { 'russian_visa': russian_visa,'russian': russian })
 
+
+@login_required(login_url = '/login')
 def visa_letter_no_stamp(request,visa_letter_id):
     #translator= Translator(to_lang="ru")
     translator1 = Translator()
@@ -273,12 +291,14 @@ def visa_letter_no_stamp(request,visa_letter_id):
                }
     return render(request, 'generateletter/gen_rus_visa.html', { 'russian_visa': russian_visa,'russian': russian })
 
+#BSMODAL view to add user
 class Add_UsersView(BSModalCreateView):
     template_name = 'generateletter/add_new_user.html'
     form_class = CustomUserCreationForm
     success_message = 'Success: User was added.'
     success_url = reverse_lazy('generateletter:users')    
 
+#BSMODAL view to update user
 class UserUpdateView(BSModalUpdateView):
     model = CustomUserM
     template_name = 'generateletter/update_order.html'
@@ -286,15 +306,25 @@ class UserUpdateView(BSModalUpdateView):
     success_message = 'Success: Entry was updated.'
     success_url = reverse_lazy('generateletter:users')
 
+#BSMODAL view to delete user
 class UserDeleteView(BSModalDeleteView):
     model = CustomUserM
     template_name = 'generateletter/delete_entry.html'
     success_message = 'Success: Entry was deleted.'
     success_url = reverse_lazy('generateletter:users')  
 
+#BSMODAL view to add organization
 class Add_org(BSModalCreateView):
     template_name = 'generateletter/Add_org.html'
     form_class = OrganizationForm
     success_message = 'Success: Organization was added.'
     success_url = reverse_lazy('generateletter:Organisation')      
+
+#BSMODAL view to update payment status
+class Payment_status(BSModalUpdateView):
+    model = Visaletters
+    template_name = 'generateletter/Payment_status.html'
+    form_class = PaymentStatusForm
+    success_message = 'Success: Organization was added.'
+    success_url = reverse_lazy('generateletter:view_visa_letter')    
 

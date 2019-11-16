@@ -1,16 +1,30 @@
 {% extends 'generateletter/base.html' %}
-
 {% load static %}
 
-{% block stylesheet %}
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
-{% endblock stylesheet %}
+{% block stylesheets %}
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+{% endblock %}
 
 {% block headscript %}
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+<script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
 {% endblock headscript %}
 
 {% block content %}
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.flash.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+<div class="modal fade" tabindex="-1" role="dialog" id="modal">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content"></div>
+    </div>
+</div>
+<hr>
 <div style="margin-left: 5px;margin-right: 5px">
     <h3>All Visa Letters</h3>
     <hr>
@@ -28,7 +42,6 @@
                 <th>Amount</th>
                 <th>Payment Status</th>
                 <th>Action</th>
-                <!-- <th><button type="button" style="font-size:10px;color:#F5DD5D;background-color: #417690;height: 30px;">Payment Status</button></th> -->
 
             </tr>
         </thead>
@@ -44,18 +57,20 @@
           <td>{{ acc.Organization_Details }}</td>
           <td>{{ acc.amount }}</td>
           <td>{{ acc.Payment_status }}</td>
-          <td class="dropdown"><a href ='#' class = 'btn  dropdown-toggle' id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:10px;color:#F5DD5D;background-color: #417690;height: 30px;">GENERATE</a>
+          <td class="dropdown"><a href ='#' class = 'btn  dropdown-toggle' id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:10px;color:#F5DD5D;background-color: #417690;height: 30px;width: 100px;padding: 0;">Generate</a>
           <!-- Dropdown -->
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton ">
-                <a class="dropdown-item" style="font-size:15px" href="{% url 'Volshebny_visa_letter:gen_eng_visa' pk=acc.pk %}">Generate English visa letter</a>
-                <a class="dropdown-item"  style="font-size:15px" href="{% url 'Volshebny_visa_letter:visa' visa_letter_id=acc.pk %}">Generate Russian visa letter</a>
-                <a class="dropdown-item"  style="font-size:15px" href="{% url 'Volshebny_visa_letter:visa_voucher_detail' visa_voucher_id=acc.pk %}">Generate Russian Voucher</a>
-                <a class="dropdown-item"  style="font-size:15px" href="{% url 'Volshebny_visa_letter:gen_eng_voucher'  pk=acc.pk %}">Generate English Voucher</a>
-                <a class="dropdown-item"  style="font-size:15px" href="{% url 'Volshebny_visa_letter:RussianStampVisaLetter' pk=acc.pk  %}">Generate Russian Stamped Visa Letter</a>
-                <a class="dropdown-item"  style="font-size:15px" href="{% url 'Volshebny_visa_letter:English_stamp_visa' pk=acc.pk %}">Generate English Stamped Visa Letter</a>
+                <a class="dropdown-item" style="font-size:15px" href="{% url 'generateletter:gen_eng_visa' pk=acc.pk %}">Generate English visa letter</a>
+                <a class="dropdown-item"  style="font-size:15px" href="{% url 'generateletter:visa' visa_letter_id=acc.pk %}">Generate Russian visa letter</a>
+                <a class="dropdown-item"  style="font-size:15px" href="{% url 'generateletter:visa_voucher_detail' visa_voucher_id=acc.pk %}">Generate Russian Voucher</a>
+                <a class="dropdown-item"  style="font-size:15px" href="{% url 'generateletter:gen_eng_voucher'  pk=acc.pk %}">Generate English Voucher</a>
+                <a class="dropdown-item"  style="font-size:15px" href="{% url 'generateletter:RussianStampVisaLetter' pk=acc.pk  %}">Generate Russian Stamped Visa Letter</a>
+                <a class="dropdown-item"  style="font-size:15px" href="{% url 'generateletter:English_stamp_visa' pk=acc.pk %}">Generate English Stamped Visa Letter</a>
 
             </div>
           </td>
+        <td><button type="button" class = 'update-payment-status btn btn-sm btn-primary' data-id="{% url 'generateletter:paymentstatus' acc.pk %}" style="font-size:10px;color:#F5DD5D;background-color: #417690;height: 30px;width: 100px;padding: 0;">Payment Status</button></td>
+
           <!-- End of dropdown -->
         </tr>
        
@@ -67,9 +82,23 @@
 {% endblock %}
 
 {% block script %}
+{% endblock script %}
+{% block extrascript %}
 <script>
     $(document).ready(function() {
         $('#myTable').DataTable();
     });
 </script>
-{% endblock script %}
+<script type="text/javascript">
+  $(function() 
+  {
+      
+      $(".update-payment-status").each(function() {
+          $(this).modalForm({
+              formURL: $(this).data('id')
+          });
+      });  
+     
+  });
+</script>
+{% endblock extrascript %}

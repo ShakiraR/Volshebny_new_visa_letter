@@ -12,7 +12,7 @@
  <div style="margin-left: 5px;margin-right: 5px;margin-top: 5px">
         <h3>Please Fill Below Form To Generate Visa Letter <span style="float: right;font-size: 18px">For Help <a href="#">Click Here</a></span></h3>
         <hr>
-        <form action={% url 'Volshebny_visa_letter:visa_letter_form_submit' %} method="post" onSubmit="alert('Thank you for registering. Our Team Will get back to you as soon as possible.');">
+        <form action={% url 'generateletter:visa_letter_form_submit' %} method="post" onSubmit="alert('Thank you for registering. Our Team Will get back to you as soon as possible.');">
             {% csrf_token %}
             <div class="form-row">
                 <div class="form-group col-md-6">

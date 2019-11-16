@@ -72,10 +72,10 @@
       <td class="dropdown"><a href ='#' class = 'btn  dropdown-toggle' id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:16px;color:#F5DD5D;background-color: #417690">GENERATE</a>
       <!-- Dropdown -->
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton ">
-            <a class="dropdown-item" style="font-size:20px" href="{% url 'Volshebny_visa_letter:gen_eng_visa' %}">Generate English visa letter</a>
-            <a class="dropdown-item"  style="font-size:20px" href="{% url 'Volshebny_visa_letter:visa' visa_letter_id=acc.pk %}">Generate Russian visa letter</a>
-            <a class="dropdown-item"  style="font-size:20px" href="{% url 'Volshebny_visa_letter:gen_eng_voucher' pk=acc.pk %}">Generate English Voucher</a>
-            <a class="dropdown-item"  style="font-size:20px" href="{% url 'Volshebny_visa_letter:gen_rus_voucher' pk=acc.pk %}">Generate Russian Voucher</a>
+            <a class="dropdown-item" style="font-size:20px" href="{% url 'generateletter:gen_eng_visa' %}">Generate English visa letter</a>
+            <a class="dropdown-item"  style="font-size:20px" href="{% url 'generateletter:visa' visa_letter_id=acc.pk %}">Generate Russian visa letter</a>
+            <a class="dropdown-item"  style="font-size:20px" href="{% url 'generateletter:gen_eng_voucher' pk=acc.pk %}">Generate English Voucher</a>
+            <a class="dropdown-item"  style="font-size:20px" href="{% url 'generateletter:gen_rus_voucher' pk=acc.pk %}">Generate Russian Voucher</a>
           </div>
         </td>
       <!-- End of dropdown -->

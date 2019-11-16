@@ -1,17 +1,16 @@
 {% extends 'generateletter/base.html' %}
 {% load static %}
 
-{% block stylesheet %}
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
-{% endblock stylesheet %}
+{% block stylesheets %}
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+{% endblock %}
 
 {% block headscript %}
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
-
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
 {% endblock headscript %}
 
 {% block content %}
-<script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
@@ -52,13 +51,13 @@
                                     {% endif %}
                                 </td>
                                 <td>
-                                    <button type="button" class="update-users-list btn btn-sm btn-primary"  data-id="{% url 'Volshebny_visa_letter:userupdate' person.pk %}">
+                                    <button type="button" class="update-users-list btn btn-sm btn-primary"  data-id="{% url 'generateletter:userupdate' person.pk %}">
                                     <span class="fa fa-edit"></span>
                                     </button>
                                    
                                 </td>
                                 <td>
-                                    <button type="button" class="delete-users-list btn btn-sm btn-danger" data-id="{% url 'Volshebny_visa_letter:userdelete' person.pk %}">
+                                    <button type="button" class="delete-users-list btn btn-sm btn-danger" data-id="{% url 'generateletter:userdelete' person.pk %}">
                                     <span class="fa fa-edit"></span>
                                      </td>
                                     
@@ -85,18 +84,21 @@
 </script>
 
 <script type="text/javascript">
-    $(function() {
-        $(".signup-btn").modalForm({formURL: "{% url 'Volshebny_visa_letter:add_users' %}"});
+    $(function() 
+    {
+        $(".signup-btn").modalForm({formURL: "{% url 'generateletter:add_users' %}"});
         $(".update-users-list").each(function() {
             $(this).modalForm({
                 formURL: $(this).data('id')
             });
         });  
-         $(".delete-users-list").each(function() {
-            $(this).modalForm({
+         $(".delete-users-list").each(function()
+          {
+            $(this).modalForm
+            ({
                 formURL: $(this).data('id')
             });
-
+          });
     });
 </script>
 {% endblock extrascript %}

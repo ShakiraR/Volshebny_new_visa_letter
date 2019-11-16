@@ -28,14 +28,14 @@
                     <h3>Welcome to myvisaletter.com</h3>
                     <p>Please enter your details to Login </p>
                     <div class="page-links">
-                        <a href="{% url 'Volshebny_visa_letter:Login' %}" class="active">Login</a><a href="{% url 'Volshebny_visa_letter:Signup' %}">Register</a>
+                        <a href="{% url 'generateletter:Login' %}" class="active">Login</a><a href="{% url 'generateletter:Signup' %}">Register</a>
                     </div>
-                    <form method="post" action="{% url 'Volshebny_visa_letter:Login' %}">
+                    <form method="post" action="{% url 'generateletter:Login' %}">
                         {% csrf_token %}
                         <input class="form-control" type="text" name="username" placeholder="Username" id="username" name="username" required>
                         <input class="form-control" type="password" name="password" placeholder="Password" id="password" name="password" required>
                         <div class="form-button">
-                            <button id="submit" type="submit" class="ibtn">Login</button> <a href="{% url 'Volshebny_visa_letter:Signup' %}">Forget password?</a>
+                            <button id="submit" type="submit" class="ibtn">Login</button> <a href="{% url 'generateletter:Signup' %}">Forget password?</a>
                         </div>
                     </form>
                 </div>

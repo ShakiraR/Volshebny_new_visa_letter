@@ -44,7 +44,7 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
         <div class="container">
             <!-- LOGO -->
-            <a class="navbar-brand logo text-uppercase" href="{% url 'Volshebny_visa_letter:index' %}">
+            <a class="navbar-brand logo text-uppercase" href="{% url 'generateletter:index' %}">
                     MY VISA LETTER
                 </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,7 +88,7 @@
                                 <p class="home-desc mx-auto f-16">Best Tool for Travel Agencies.</p>
                                 <h2 class="home-title-2 line-height_1_3">Generate Visa Letter of any Country , of any Language with ease</h2>
                                 <div class="mt-4">
-                                    <a href="{% url 'Volshebny_visa_letter:Login' %}" class="btn btn-custom">Quick Demo</a>
+                                    <a href="{% url 'generateletter:Login' %}" class="btn btn-custom">Quick Demo</a>
                                 </div>
                                 <div class="home-mockup-2">
                                     <img src="{% static 'generateletter/images/form.png' %}" class="img-fluid" alt="">
@@ -480,7 +480,7 @@
                                     <div class="modal-body">
                                         <div class="custom-form mt-4">
                                             <div id="message"></div>
-                                            <form action="{% url 'Volshebny_visa_letter:Login' %}" method="post"  name="contact-form" id="contact-form" onSubmit="alert('Thank you. Our Team Will get back to you as soon as possible.')">
+                                            <form action="{% url 'generateletter:Login' %}" method="post"  name="contact-form" id="contact-form" onSubmit="alert('Thank you. Our Team Will get back to you as soon as possible.')">
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-4">
@@ -644,7 +644,7 @@
                         <ul class="list-unstyled footer-link mt-4">
                             <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Tutorial</a></li>
                             <li><a href=""><i class="mdi mdi-chevron-right mr-2"></i>Manual</a></li>
-                            <li><a href="{% url 'Volshebny_visa_letter:terms_cond' %}"><i class="mdi mdi-chevron-right mr-2"></i>Term & Conditions</a></li>
+                            <li><a href="{% url 'generateletter:terms_cond' %}"><i class="mdi mdi-chevron-right mr-2"></i>Term & Conditions</a></li>
                             
 
                         </ul>

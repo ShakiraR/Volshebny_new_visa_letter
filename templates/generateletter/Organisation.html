@@ -24,13 +24,12 @@
     </div>
 </div>
 <hr>
-                 <h4>Name_of_Organization List<span style="float: right"></span></h4>
-                 <button class="signup-btn btn btn-info" type="button" name="button">Click here to Create a New User</button>
-
-                <hr>
-                <div>
+        <h4>Name of Organization List<span style="float: right"></h4>
+        <button class="signup-btn btn btn-info" type="button" name="button" >Click here to add organization</button>
+<hr>
+    <div>
                      
-                         <table id="test_table" class="display" style="width:100%">
+         <table id="test_table" class="display" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>Sr No.</th>
@@ -68,7 +67,7 @@
 </script>
 <script type="text/javascript">
     $(function() {
-        $(".signup-btn").modalForm({formURL: "{% url 'Volshebny_visa_letter:Add_org' %}"});
+        $(".signup-btn").modalForm({formURL: "{% url 'generateletter:Add_org' %}"});
         
 
     });
