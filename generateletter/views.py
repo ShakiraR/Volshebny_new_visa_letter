@@ -10,7 +10,7 @@ from translate import Translator
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.hashers import make_password
 from bootstrap_modal_forms.generic import (BSModalCreateView,BSModalUpdateView,BSModalReadView,BSModalDeleteView)
-from generateletter.forms import CustomUserCreationForm,CustomUserForm,OrganizationForm,PaymentStatusForm
+from generateletter.forms import visalettersform,CustomUserForm,OrganizationForm,PaymentStatusForm
 
 # Create your views here.
 
@@ -294,7 +294,7 @@ def visa_letter_no_stamp(request,visa_letter_id):
 #BSMODAL view to add user
 class Add_UsersView(BSModalCreateView):
     template_name = 'generateletter/add_new_user.html'
-    form_class = CustomUserCreationForm
+    form_class = CustomUserForm
     success_message = 'Success: User was added.'
     success_url = reverse_lazy('generateletter:users')    
 
@@ -326,5 +326,13 @@ class Payment_status(BSModalUpdateView):
     template_name = 'generateletter/Payment_status.html'
     form_class = PaymentStatusForm
     success_message = 'Success: Organization was added.'
-    success_url = reverse_lazy('generateletter:view_visa_letter')    
+    success_url = reverse_lazy('generateletter:view_visa_letter') 
+
+#BSMODAL view to update payment status
+class visaupdate(BSModalUpdateView):
+    model = Visaletters
+    template_name = 'generateletter/visaupdate.html'
+    form_class = visalettersform
+    success_message = 'Success: Organization was added.'
+    success_url = reverse_lazy('generateletter:view_visa_letter')        
 

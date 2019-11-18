@@ -1,17 +1,16 @@
 {% extends 'generateletter/base.html' %}
 {% load static %}
 
-{% block stylesheets %}
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-{% endblock %}
+{% block stylesheet %}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+{% endblock stylesheet %}
 
 {% block headscript %}
-<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-
-<script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 {% endblock headscript %}
 
 {% block content %}
+<script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
@@ -25,9 +24,9 @@
     </div>
 </div>
 <hr>
-<div style="margin-left: 5px;margin-right: 5px">
     <h3>All Visa Letters</h3>
     <hr>
+   
     <table id="myTable" class="display">
         <thead>
             <tr>
@@ -41,7 +40,9 @@
                 <th>Organization Details</th>
                 <th>Amount</th>
                 <th>Payment Status</th>
+                <th>Edit</th>
                 <th>Action</th>
+                <th>Edit Payment Status</th>
 
             </tr>
         </thead>
@@ -57,6 +58,9 @@
           <td>{{ acc.Organization_Details }}</td>
           <td>{{ acc.amount }}</td>
           <td>{{ acc.Payment_status }}</td>
+           <td>
+                <button type="button" class="visa-update btn btn-sm btn-primary"  data-id="{% url 'generateletter:visaupdate' acc.pk %}">
+                <span class="fa fa-edit"></span></button>
           <td class="dropdown"><a href ='#' class = 'btn  dropdown-toggle' id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:10px;color:#F5DD5D;background-color: #417690;height: 30px;width: 100px;padding: 0;">Generate</a>
           <!-- Dropdown -->
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton ">
@@ -76,9 +80,7 @@
        
       {% endfor %}
     </table>
-
 </div>
-
 {% endblock %}
 
 {% block script %}
@@ -94,6 +96,11 @@
   {
       
       $(".update-payment-status").each(function() {
+          $(this).modalForm({
+              formURL: $(this).data('id')
+          });
+      });  
+       $(".visa-update").each(function() {
           $(this).modalForm({
               formURL: $(this).data('id')
           });

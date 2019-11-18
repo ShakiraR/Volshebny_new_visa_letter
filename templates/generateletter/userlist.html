@@ -24,11 +24,10 @@
     </div>
 </div>
 <hr>
-     <h4>Users List<span style="float: right"></span></h4>
-     <button class="signup-btn btn btn-info" type="button" name="button">Click here to Create a New User</button>
+     <h4>Users List<span style="float: right">
+     <button class="signup-btn btn btn-info" type="button" name="button" style="float: right">Click here to Create a New User</button></span></h4>
                  
      <hr>
-        <div>
             {% if userlist %}
                          <table id="test_table" class="display" style="width:100%">
                             <thead></thead>
@@ -36,6 +35,8 @@
                                     <th>User Name</th>
                                     <th>Email</th>
                                     <th>User Role </th>
+                                    <th>Edit </th>
+                                    <th>Delete </th>
                                  </tr>
                                
                                 <tbody>

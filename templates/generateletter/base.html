@@ -53,13 +53,13 @@
                         <a class="nav-link" href="{% url 'generateletter:users' %}" style="color: #ffffff">Users</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'generateletter:Organisation' %}" style="color: #ffffff">Oraganization</a>
+                        <a class="nav-link" href="{% url 'generateletter:Organisation' %}" style="color: #ffffff">Organization</a>
                     </li>
                     <li class="nav-item">
                             <a class="nav-link" href="{% url 'generateletter:Myprofile' %}" style="color: #ffffff">MyProfile</a>
                         </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'generateletter:reports' %}" style="color: #ffffff">Reports</a>
+                    {% comment %} <li class="nav-item">
+                        <a class="nav-link" href="{% url 'generateletter:reports' %}" style="color: #ffffff">Reports</a> {% endcomment %}
                     </li>
                     <li class="nav-item">
                             <a class="btn navbar-btn btn-success" href="{% url 'generateletter:visa_letter_form_submit'  %}">Generate New Visa Documents</a>

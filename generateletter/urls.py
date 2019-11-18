@@ -6,7 +6,7 @@ app_name = 'generateletter'
 
 urlpatterns = [
     #Index Page Url
-    path("abc", views.index, name="index"), 
+    path("index/", views.index, name="index"), 
 
     #View Visa letter Url
     path("", views.list_view.as_view(), name="view_visa_letter"),
@@ -87,6 +87,9 @@ urlpatterns = [
 
     #Update payment status BSMODAL URL
     path('Payment_status/<int:pk>',views.Payment_status.as_view(),name='paymentstatus'),
+
+    path('visaupdate/<int:pk>',views.visaupdate.as_view(),name='visaupdate'),
+    
 
 ]
 
